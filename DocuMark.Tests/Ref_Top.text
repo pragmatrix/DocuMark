@@ -1,0 +1,299 @@
+Inhaltsverzeichnis TOP!
+
+
+
+Einführung
+
+1	Das Programm
+1.1	Laufwerksauswahl
+1.2	Ziellaufwerk
+1.3	Prüfen
+1.3.1	Prüfen unterbrechen
+1.4	Scan
+1.4.1	Laufwerk freigeben
+1.5	Optimieren
+1.5.1	WB-Modus
+1.5.2	CLI-Modus
+1.5.3	ReadBuff
+1.5.4	Gfx-Anzeige
+1.5.5	Verbrauch
+1.5.6	Start
+1.6	TOP! beenden
+
+Anhang A	Statusanzeige
+Anhang B	Tastaturkürzel
+Anhang C	Fehlermeldungen beim Datenzugriff
+
+/UK Einführung UK/
+
+Durch häufige Zugriffe auf Datenträgern seien es Festplatten oder Disketten, können systembedingt die Zugriffsgeschwindigkeiten auf einzelne Dateien merkbar herabsinken. Die Dateien werden ungewollt zerstückelt und an mehreren verschiedenen Positionen auf dem Datenträger verteilt. Diese /i Fragmentierungen i/ treten häufig dann auf, wenn auf einem Datenträger Dateien häufig gelöscht oder umkopiert werden.
+
+Diesem Problem widmet sich nun TOP!. TOP! versucht mit einigen relativ komplizierten Algorithmen die Dateien zu defragmentieren und neu anzulegen.
+
+
+
+
+/UK 1 Das Programm UK/
+
+Nach dem Start von TOP! mit einem Doppelklick erscheint auf der Workbench die /i Oberfläche i/, die in verschiedenen Bereichen unterteilt ist. Die nachfolgend in funktionsbezogener Reihenfolge beschrieben werden.
+
+
+
+
+/U1 1.1 Laufwerksauswahl U1/
+
+
+In der Mitte des Fensters (unter dem /ZM Laufw. freig. ZM/ Knopf) befindet sich die Laufwerksauswahl, in der mindestens das Laufwerk "DF0:" erscheinen sollte. Bevor irgendeine weitere Funktion ausgewählt wird, sollte zuerst das zu bearbeitende Laufwerk angewählt werden.
+
+Mit einem Doppelklick auf das Laufwerk ist die Anzeige von einigen physikalischen Informationen des Datenträgers möglich. Mit einem Druck auf /ZM OK! ZM/ verschwindet das Laufwerksinformationsfenster wieder.
+
+Nach der Aktivierung des Laufwerks, können weitere Funktionen angewählt werden. Um von einen Datenträger auf einen zweiten zu optimieren ist es bei Bedarf möglich ein Ziellaufwerk mit Hilfe von /ZM Ziel ZM/ und der darunterliegenden zweiten Laufwerksauswahl anzuwählen. Dies ist besonders aus Sicherheitsgründen sinnvoll, oder falls wenig Speicherplatz vorhanden ist. Natürlich ist es hier nur möglich auf einen Datenträger zu optimieren, der die selbe physikalische Größe hat.
+
+
+
+
+/U1 1.2 Ziellaufwerk U1/
+
+
+Mit dem Knopf /ZM Ziel ZM/ wird ein Ziellaufwerk aktiviert. Ist /ZM Ziel ZM/ nicht angewählt, wird eine eventuelle Optimierung nur auf einem Laufwerk durchgeführt. Das Ziellaufwerk kann bei einem /ZK abgehakten ZK/ /ZM Ziel ZM/ Knopf mit der darunter befindlichen Laufwerksauswahl eingestellt werden.
+
+Bitte beachten Sie, daß die Laufwerke die selbe physikalische Größe haben müssen. Falls dennoch verschieden große Laufwerke eingestellt wurden, wird vor der Optimierung ein entsprechender Hinweis ausgegeben.
+
+Auch hier können durch einen Doppelklick Informationen über ein bestimmtes Laufwerk ausgegeben werden.
+
+Wie angesprochen hat die Optimierung auf ein anderes Laufwerk den Vorteil, daß hierdurch keine Daten zerstört werden können und daß der Optimierungsvorgang durch die ausfallende Sortierung und Zwischenlagerung der Datenblöcke verschnellert wird.
+
+
+
+
+/U1 1.3 Prüfen U1/
+
+Nach Auswahl eines Laufwerks sollte zunächst bei der erstmaligen Verwendung von TOP! die Überprüfung gestartet werden. Die Überprüfung versucht einfach alle Datenblöcke des Trägers einmal in den Speicher zu lesen, um sicherzugehen, daß sich keine schwerwiegenden Fehler auf dem Datenträger befinden.
+
+Beim Start der /i Prüfvorgang i/ werden einige Veränderungen in dem Fenster erkennbar. Zuerst werden alle möglichen Knöpfe mit einem schwarzen Punktemuster überzogen, um deren Auswahl zu vermeiden. Links in der Mitte wechselt die Statusanzeige von "warte..." auf "Prüfen". Wenn die Diskette richtig eingelegt ist, und sie auch vom Betriebssystem als DOS-Diskette erkannt wurde, startet die trackweise Überprüfung.
+
+Während der Überprüfung wird die /i Trackanzeige i/, die sich links oben im größten abgetrennten Bereich des Fensters befindet, je nach Anzahl der schon überprüften Spuren, aufgefüllt. Rechts neben der /i Statusanzeige i/ befindet sich eine Füllanzeige, die sich von links nach rechts auffüllt und zusätzlich noch den prozentualen Wert der schon überprüften Datenblöcke enthält.
+
+Diese drei Anzeige-Komponenten (Trackanzeige, Statusanzeige und Fortschrittsanzeige) werden auch in den Funktionen Scan und Optimieren verwendet.
+
+Der Prüfvorgang kann jederzeit mit einem Druck auf /ZM Stop ZM/ oder /ZB s ZB/ abgebrochen werden.
+
+Nach einer erfolgreichen Überprüfung sollte eine Bestätigung erscheinen, daß sich keine Fehler auf dem Datenträger befinden. Falls ein Fehler aufgetreten ist, sollte die Optimierung anschließend nicht gestartet werden. Auch falls ein nachträgliches /ZK scannen ZK/ des Laufwerks keine Fehler ausgibt, ist von einer Optimierung abzuraten.
+
+
+
+
+/U1 1.4 Scan U1/
+
+Vor der Optimierung muß das Laufwerk immer zuerst /ZK gescannt ZK/ werden. /ZM Scan ZM/ analysiert und speichert die komplette Verzeichnisstruktur Ihres Datenträgers, und kann nach der erfolgreichen Verarbeitung dieser Informationen dem Benutzer genau mitteilen, wie stark die auf dem Datenträger befindlichen Dateien fragmentiert sind.
+
+Während dem /i Scannvorgang i/ werden keine Daten geschrieben. /ZM Scan ZM/ kann also getrost auf alle möglichen Festplattenpartitionen oder Disketten losgelassen werden, um den Grad der Verwüstung anzuzeigen.
+
+Nach einem Druck auf /ZM Scan ZM/ werden wie bei "Prüfen" fast alle Knöpfe mit einem Schwarzschleier überzogen. Die Statusanzeige wechselt um in "Scannen", und die Trackanzeige oben links zeigt nun dunkle und helle Punkte oder Striche an (Alle Farbangaben beziehen sich auf die Standardfarben einer Workbench 2.x). Jeder dieser Farbkleckser ist ein Block auf dem Datenträger. Ein heller Klecks ist ein Infoblock, der nur zur Verwaltung der Daten vorhanden ist. Ein dunkler Klecks ist ein Datenblock.
+
+Der /i Scannvorgang i/ kann jederzeit mit /ZM Stop ZM/ abgebrochen werden.
+
+Je nach dem wie diese Farben in der Trackanzeige verteilt sind, fällt auch dann das Scan-Ergebnis aus, das nach dem /i Scannvorgang i/ erscheint.
+
+Zwei Werte werden hier ausgegeben, von denen der erste der wichtigere ist. Dieser Wert gibt die Anzahl der Dateien in Prozent an, die mindestens in zwei Teile zerteilt sind. Sind also zum Beispiel 20% fragmentiert, ist durchschnittlich jede fünfte Datei in ein oder mehrere Teile zerstückelt!
+
+Die Anzeige der "fragmentierten Infos" ist mehr für die wirklichen CLI-Freaks gedacht. Desto kleiner dieser Wert, desto schneller können Verzeichnisse vom CLI aus angezeigt werden. Da die Workbench zusätzlich zu den Verzeichnissen noch Icons mitspeichert, und diese dann beim Lesen einlädt, gibt es hierfür eine andere Optimierungsart.
+
+Das Fenster mit dem /i Scan-Ergebnis i/ kann durch einen Klick auf /ZM OK! ZM/ verlassen werden.
+
+
+/U2 1.4.1 Laufwerk freigeben U2/
+
+TOP! geht nach dem erfolgreichen /ZK scannen ZK/ eines Datenträgers davon aus, daß dieses Laufwerk danach optimiert wird. Da TOP! sichergehen will, daß keine Informationen auf dem Datenträger geändert werden, bleibt das Laufwerk in den Händen von TOP!.
+
+Um auf das Laufwerk in diesem Fall wieder zuzugreifen, ist ein Klick auf /ZM Laufw. freig. ZM/ nötig.
+
+Wenn eine Optimierung ohne vorherigem Scannen gestartet wird, wird Scan automatisch durchgeführt.
+
+
+
+
+/U1 1.5 Optimieren U1/
+
+Kommen wir nun zum Hauptpunkt von TOP!. Das Optimieren. Bevor aber der Hauptgang gestartet wird, sollten folgende Parameter noch überprüft, beziehungsweise verändert werden.
+
+
+/U2 1.5.1 WB-Modus U2/
+
+Der /ZM WB-Modus ZM/ sollte bei einer intensiven Nutzung der Workbench eingestellt werden.
+
+In diesem speziellen Optimierungsmodus werden die Icons, die auf der Workbench plaziert sind zwischen die Informationsblöcke gelegt. Es entsteht dadurch bei der Benutzung der Workbench ein merkbarer Geschwindigkeitsvorteil beim Öffnen von Verzeichnissen.
+
+
+/U2 1.5.2 CLI-Modus U2/
+
+Falls hauptsächlich mit dem /i CLI i/ gearbeitet wird, ist eine Optimierung mit dem /ZM CLI-Modus ZM/ wohl am besten geeignet. Hier werden einfach nur die Informationsblöcke aneinandergereiht, um das möglichst schnelle Lesen eines Verzeichnisses zu verschnellern.
+
+
+/U2 1.5.3 ReadBuff U2/
+
+Hier kann optional ein zusätzlicher Trackbuffer beim Lesen eingestellt werden. Je nach Laufwerk und Fragmentierung können sich durch das Einschalten von /ZM ReadBuff ZM/ erhebliche Geschwindigkeitsvorteile ergeben.
+
+
+/U2 1.5.4 Gfx-Anzeige U2/
+
+Da der Aufbau der linken oberen Trackanzeige beim Optimieren relativ Aufwendig ist, und teilweise auf langsameren Prozessoren in der /i Optimierungszeit i/ bemerkbar wird, kann sie hier ausgeschaltet werden.
+
+
+/U2 1.5.5 Verbrauch U2/
+
+Hier kann der ungefähre Speicherverbrauch von TOP! mit den Pfeiltasten eingestellt werden. Ist der links neben den Tasten befindliche Bereich aufgefüllt, wird fast der gesamte Speicher für die Zwischenspeicherung der Datenblöcke hergenommen. Ist er leer, wird so wenig wie nötig verwendet.
+
+Die Anzahl der freien Bytes im Hauptspeicher kann jederzeit rechts unten unter "Bytes frei" abgelesen werden.
+
+
+
+/U2 1.5.6 Start U2/
+
+Nach den oben beschriebenen Einstellung kann nun die Optimierung begonnen werden. Falls vorher noch nicht gescannt wurde, oder vielleicht einige wichtige Parameter geändert wurden, wird der /i Scannvorgang i/ nochmals gestartet. Wobei diesmal kein Scan-Ergebnis mehr ausgegeben wird. Auch ist nun eine Unterbrechung nicht mehr möglich!
+
+Bitte vergewissern Sie sich vorher, daß Sie sich eine /i Sicherheitskopie i/ von den wichtigsten Daten angelegt haben!
+
+Bitte beachten Sie auch, daß nicht schon optimierte Datenträger optimiert werden, da sich dadurch systembedingt größere interne Berechnungszeiten beim Status "Bewegen" ergeben können!
+
+Nach dem Scannen des Datenträgers führt die Optimierung noch einige interne Tests durch, und beginnt dann mit dem Kopieren der Daten. Zuerst werden Daten an beliebigen Positionen in den Speicher gelesen (hell dargestellt), und dann wieder zurückgespeichert (in blau dargestellt). Dieser Vorgang wiederholt sich solange, bis keine Datenblöcke mehr vorhanden sind. Die Geschwindigkeit ist abhängig von der Anzahl der Datenblöcke, von der Geschwindigkeit Ihres Laufwerkes sowie die Menge des Speichers, die dem Programm zum Verschieben der Daten zur Verfügung gestellt wurde.
+
+Bitte beachten Sie, daß bei einer Unterbrechung während der Optimierung durch z.B. Ausschalten des Computers wichtige Daten verloren gehen können!
+
+
+
+
+/U1 1.6 TOP! beenden U1/
+
+Das Programm kann entweder durch einen Druck auf den Schließknopf links oben am Fenster beendet werden, oder durch einen Druck auf den /ZM Ende ZM/ Knopf.
+
+
+
+
+/U2 Anhang A Statusanzeige U2/
+
+
+Die Statusanzeige kann folgende Aktionen anzeigen:
+
+warte...
+
+/E2 Hier wird auf eine Eingabe des Benutzers gewartet E2/
+
+Prüfen
+
+/E2 Momentan wird ein Datenträger überprüft E2/
+
+Scannen
+
+/E2 Der Scannvorgang ist in Aktion E2/
+
+Korrigieren
+
+/E2 Die gescannten Blöcke werden im Speicher korrigiert E2/
+
+Sortieren
+
+/E2 Die gescannten Blöcke werden im Speicher sortiert E2/
+
+LRTest
+
+/E2 Aus Geschwindigkeitsgründen wird hier überprüft, wierum ein Datenträger optimiert werden soll. E2/
+
+Bewegen
+
+/E2 Diese Funktion findet heraus, welche Blöcke im nächsten Verschiebevorgang bearbeitet werden müssen. Teilweise kann diese Funktion relativ viel Zeit in Anspruch nehmen. E2/
+
+Lesen
+
+/E2 Nun werden die Daten eingelesen E2/
+
+Koordinieren
+
+/E2 Die Zeiger aller eingelesenen Informationsblöcke werden korrigiert. E2/
+
+Schreiben
+
+/E2 Die Daten werden wieder zurückgeschrieben. E2/
+
+
+
+
+/U1 Anhang B Tastaturkürzel U1/
+
+Im Fenster von TOP! sind die meisten Funktionen durch die folgenden Tastaturkürzel auswählbar:
+
+Einstellungen:
+
+/ZB r ZB/	ReadBuff
+/ZB g ZB/	Gfx-Anzeige
+/ZB w ZB/	WB-Modus
+/ZB c ZB/	CLI-Modus
+
+Verbrauch:
+
+/ZB v ZB/	Verbrauch +10%
+/ZB V ZB/	Verbrauch -10%
+
+Laufwerksauswahl:
+
+/ZB l ZB/	Laufwerk freigeben
+/ZB z ZB/	Ziel
+
+Aktionsknöpfe
+
+/ZB p ZB/	Prüfen
+/ZB s ZB/	Scan
+/ZB s ZB/	Stop...
+/ZB o ZB/	Optimieren...
+/ZB ü ZB/	Über...
+/ZB e ZB/	Ende
+
+Verschiedene Hinweisfenster:
+
+/ZB v ZB/	Bestätigung (linker Knopf)
+/ZB b ZB/	Abbruch (rechter Knopf)
+
+
+
+
+/U1 Anhang C Fehlermeldungen beim Datenzugriff U1/
+
+
+Folgende Fehler können beim Lesen oder Schreiben von Daten vorkommen:
+
+Kein Sektor-Header
+Falsche Sektor-Preamble
+Falsche Sektor-ID
+Falsche Header-Prüfsumme
+Falsche Sektor-Prüfsumme
+Zu wenige Sektoren
+Falscher Sektor-Header
+
+/E2 Alle diese Fehlermeldungen deuten darauf hin, daß ein Sektor beziehungsweise eine Spur defekt ist. E2/
+
+Schreibgeschützt
+
+/E2 Der Datenträger ist schreibgeschützt. E2/
+
+Diskette gewechselt
+
+/E2 Die Diskette wurde aus dem Laufwerk entfernt oder es war keine eingelegt. E2/
+
+Seek Fehler
+
+/E2 Die Spur 0 wurde nicht gefunden. Dieser Fehler kann auf einen Hardwaredefekt Ihres Laufwerks hindeuten. E2/
+
+Kein Speicher
+
+/E2 Es ist zu wenig Speicher vorhanden. E2/
+
+Laufwerk wird benutzt
+
+/E2 Das Laufwerk wird gerade von jemanden benutzt. Bitte starten Sie den Vorgang nochmals. E2/
+
+
+Falsche Unit
+Falscher Laufwerkstyp
+
+/E2 Interne Fehler, die nicht auftreten sollten. E2/
+
