@@ -57,7 +57,6 @@
     <None Include="Ref_Top.text">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Script.fsx" />
     <None Include="packages.config" />
     <None Include="app.config" />
     <None Include="Ref_Rap.text">

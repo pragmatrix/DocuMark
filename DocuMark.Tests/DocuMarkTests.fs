@@ -20,14 +20,14 @@ type DocuMarkTests() =
         | Failure f ->
             sprintf "failure %A" f |> failwith
 
-    let analyze text = Documentum.parse text |> Documentum.analyze |> Documentum.processAnalysis text
+    let analyze text = Docu.parse text |> Docu.analyze |> Docu.processAnalysis text
 
     let toMarkdown text =
-        analyze text |> Documentum.toMarkdown
+        analyze text |> Docu.toMarkdown
 
     [<Test>]
     member this.stringConversionConvertsUmlautsProperly() =
-        let str = Documentum.readFile "Umlauts.text"
+        let str = Docu.readFile "Umlauts.text"
         str |> should equal "ChunkGröße\n"
 
     [<Test>]
@@ -48,15 +48,15 @@ type DocuMarkTests() =
 
     [<Test>]
     member this.analyzeCop() =
-        let text = Documentum.readFile "Ref_Cop.text"
+        let text = Docu.readFile "Ref_Cop.text"
         text |> analyze |>  ignore
 
     [<Test>]
     member this.analyzeTop() =
-        let text = Documentum.readFile "Ref_Top.text"
+        let text = Docu.readFile "Ref_Top.text"
         text |> analyze |>  ignore
 
     [<Test>]
     member this.analyzeRap() =
-        let text = Documentum.readFile "Ref_Rap.text"
+        let text = Docu.readFile "Ref_Rap.text"
         text |> analyze |>  ignore

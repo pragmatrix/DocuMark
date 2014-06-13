@@ -20,19 +20,19 @@ let main argv =
         let markdownFn = Path.ChangeExtension(fn, "md");
 
         printfn "Reading file: %s" fn
-        let text = Documentum.readFile fn
+        let text = Docu.readFile fn
 
         printfn "Converting..."
         let md = 
             text 
-            |> Documentum.parse 
-            |> Documentum.analyze 
-            |> Documentum.processAnalysis text 
-            |> Documentum.toMarkdown
-            |> Documentum.breakConsecutiveLines
+            |> Docu.parse 
+            |> Docu.analyze 
+            |> Docu.processAnalysis text 
+            |> Docu.toMarkdown
+            |> Docu.breakConsecutiveLines
 
         printfn "Conversion done, writing to file: %s" markdownFn
-        File.WriteAllText(markdownFn, md, Documentum.encoding);
+        File.WriteAllText(markdownFn, md, Docu.encoding);
 
         0
     with 

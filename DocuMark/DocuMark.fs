@@ -10,6 +10,7 @@ type ConvSpec =
     | Span of string * string
     | Ignore
     | Indent of string
+    | ListIndent of string
 
 let convTable =
     [
@@ -22,13 +23,17 @@ let convTable =
         "i", Span ("*","*");
         "ZK", Span ("*","*");
         "ZM", Span ("`","`"); /// Buttons?
-        "E2", Indent "- ";
-        "E4", Indent "\t- ";
+        "E2", ListIndent "- ";
+        "E4", Indent "- ";
         "ZB", Span ("`","`"); /// Keyboard Keys / Shortcuts?
         "ZL", Indent "\t"; /// Code
         "ZY", Span ("`", "`"); // ?
     ]
 
+let hasVerbatimContent tag = 
+    match tag with
+    | "ZL" -> true
+    | _ -> false
 
 let convMap = Map.ofSeq convTable
 
@@ -79,7 +84,7 @@ module DocuParser =
 
     let syntax = element.many
 
-module Documentum =
+module Docu =
 
     let encoding = System.Text.Encoding.GetEncoding("ISO-8859-1")
 
@@ -164,33 +169,48 @@ module Documentum =
 
     let private splitLines (content: string) = content.Split('\n')
     let private joinLines (lines: string seq) = String.Join("\n", Seq.toArray lines)
-
-    let private indentLines str = Seq.map (fun l -> str + l)
-
-    let private indent str content =
-        content
-        |> splitLines
-        |> indentLines str
-        |> joinLines
-
+    let private mapLines f content = 
+        splitLines content |> Seq.map f |> joinLines
 
     let private convertMarkdown spec content = 
         match spec with
         | Header h -> h + content
         // | Block (top, bottom) -> top + content + bottom
         | Ignore -> content
-        | Indent str -> indent str content
+        | Indent str -> mapLines (fun l -> str + l) content
         | Span (pre, post) -> pre + content.Trim() + post
-         
+        | ListIndent str ->
+            // list indent is special, it does not indent empty lines and if the (trimmed) line
+            // already begins with the marker, it prefixes a tab.
+            let listIndent (l:string) =
+                let trimmed = l.Trim();
+                if trimmed = "" then l else
+                if (trimmed.StartsWith(str)) then "\t" + l else
+                str + l
 
-    let rec toMarkdown structure = 
-        match structure with
-        | Content (_, str) -> str
-        | Structure l -> l |> List.map toMarkdown |> List.fold (+) ""
-        | Tagged ((_, tag), content) ->
-            let converter = convMap.[tag]
-            convertMarkdown converter (toMarkdown (Structure content))
+            mapLines listIndent content
 
+
+    let rec toMarkdown structure =
+        
+        let convertNonVerbatimChars (str:string) = 
+            str
+                .Replace("<", "&lt;")
+                .Replace("*", "\\*");
+        
+        let isVerbatim = List.exists hasVerbatimContent
+
+        let rec toM tagStack structure =
+            match structure with
+            | Content (_, str) -> 
+                if isVerbatim tagStack then str
+                else convertNonVerbatimChars str
+            | Structure l -> l |> List.map (toM tagStack) |> List.fold (+) ""
+            | Tagged ((_, tag), content) ->
+                let converter = convMap.[tag]
+                convertMarkdown converter (toM (tag::tagStack) (Structure content))
+
+        toM [] structure    
 
     let breakConsecutiveLines (content:string) = 
         let lines = splitLines content
@@ -208,4 +228,3 @@ module Documentum =
                     yield lines.[i]
         }
         s |> joinLines
-

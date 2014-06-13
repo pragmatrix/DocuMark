@@ -31,7 +31,7 @@ Einleitung
 4.5	Formatieren
 
 Anhang A	Tastaturkürzel  
-Anhang B	Fehlermeldungen beim Datenzugriff \\\ ****((((siehe TOP!)))****
+Anhang B	Fehlermeldungen beim Datenzugriff \\\ \*\*\*\*((((siehe TOP!)))\*\*\*\*
 
 # Einleitung 
 

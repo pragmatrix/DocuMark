@@ -394,45 +394,45 @@ Nach Einstellung der nötigen Parameter wird in RAP!-Prefs beim Speichern eine Da
 
 Folgende *Schlüsselwörter* werden erkannt:
 
-volprefix <Zeichenkette>;
+volprefix &lt;Zeichenkette>;
 
 -  Dient zur Festsetzung der Zeichenkette, die vor den Namen des RAP-Laufwerks stehen soll. 
 
-volsuffix <Zeichenkette>;
+volsuffix &lt;Zeichenkette>;
 
 -  Die Zeichenkette, die angefügt wird. 
 
-crypter <Wert1>,<Wert2>;
+crypter &lt;Wert1>,&lt;Wert2>;
 
--  Stellt den Crypter ein. Wert1 ist der Cryptername, Wert2 der Crypterschlüssel des verwendeten Passwortes. Zum Ausschalten des Crypters geben Sie bitte `crypter '';` ein. Die Berechnung der *Crypterschlüssels* geschieht über das mitgelieferte *RAP-GetKey* Programm, dem Sie den Packer sowie das Passwort übergeben. Um nun zum Beispiel den *Crypterschlüssel* des Passwortes "Test" zu berechnen, muß folgende Zeile im CLI oder in der Shell eingegeben werden:  
--  
-- 	-  RAP-GetKey fast Test  
--  
-- Das Ergebnis müßte 0x1D2AFE68 lauten. In der Konfigurationsdatei müßte dann die entsprechende Zeile folgendermaßen aussehen:  
--  
-- 	-  crypter 'fast',0x1D2AFE68;  
+-  Stellt den Crypter ein. Wert1 ist der Cryptername, Wert2 der Crypterschlüssel des verwendeten Passwortes. Zum Ausschalten des Crypters geben Sie bitte `crypter '';` ein. Die Berechnung der *Crypterschlüssels* geschieht über das mitgelieferte *RAP-GetKey* Programm, dem Sie den Packer sowie das Passwort übergeben. Um nun zum Beispiel den *Crypterschlüssel* des Passwortes "Test" zu berechnen, muß folgende Zeile im CLI oder in der Shell eingegeben werden:
 
-packer <Wert1>;
+	-  RAP-GetKey fast Test 
+
+- Das Ergebnis müßte 0x1D2AFE68 lauten. In der Konfigurationsdatei müßte dann die entsprechende Zeile folgendermaßen aussehen:
+
+	-  crypter 'fast',0x1D2AFE68;  
+
+packer &lt;Wert1>;
 
 -  Stellt den aktuellen Packer ein. Durch die Eingabe von "Packer '';" wird der Packer ausgeschaltet. 
 
-handler <Zeichenkette>;
+handler &lt;Zeichenkette>;
 
 -  Gibt den Pfad und Name der  HandlerDatei an. 
 
-stack <Wert>;
+stack &lt;Wert>;
 
--  Setzt den HandlerStack auf <Wert> Bytes. 
+-  Setzt den HandlerStack auf &lt;Wert> Bytes. 
 
-chunksize <Wert>;
+chunksize &lt;Wert>;
 
--  Setzt die ChunkGröße auf <Wert> Bytes. 
+-  Setzt die ChunkGröße auf &lt;Wert> Bytes. 
 
-ovlsize <Wert>;
+ovlsize &lt;Wert>;
 
--  Setzt die OvlGröße auf <Wert> Bytes. 
+-  Setzt die OvlGröße auf &lt;Wert> Bytes. 
 
-drive <Zeichenkette1>,<Zeichenkette2>{}
+drive &lt;Zeichenkette1>,&lt;Zeichenkette2>{}
 
 -  Fügt ein Laufwerk an. Zeichenkette 1 gibt das *SYS-Laufwerk* an. Zeichenkette 2 das *RAP-Laufwerk*. Wenn weitere *individuelle Parameter* nur innerhalb dieses Laufwerks geändert werden sollen, müssen sie nach der Zeichenkette2 innerhalb den geschweiften Klammer eingefügt werden. Falls keine individuellen Parameter verwenden werden, werden die aktuellen, globalen Parameter vererbt. 
 
@@ -440,11 +440,11 @@ drive "ram:","rap:";
 
 -  Fügt das Laufwerk "rap:" an. Übernimmt die Parameter aus dem globalen Bereich der *Konfigurationsdatei*. 
 
-include <Zeichenkette>{}
+include &lt;Zeichenkette>{}
 
 -  Fügt ein Pfad an. Wie bei den *Laufwerkseinstellungen* können hier auch individuelle Parameter für diesen Pfad gesetzt werden. Auch Platzhalter sind hier möglich (siehe hierzu Anhang F). 
 
-exclude <Zeichenkette>{}
+exclude &lt;Zeichenkette>{}
 
 -  Fügt einen Pfad an, der nicht bearbeitet werden soll. Auch hier können individuelle Parameter für weitere Unterpfade gesetzt werden. Die eingegebene Zeichenkette kann auch wie im Anhang F beschrieben Platzhalter verwenden. 
 
@@ -483,7 +483,7 @@ Auch werden C und C++ *Kommentare* erkannt.
 
 Beispiel:
 
-/* Dies ist ein C Kommentar */  
+/\* Dies ist ein C Kommentar \*/  
 // Dies ist ein C++ Kommentar
 
 Bitte beachten Sie auch, daß das Konfigurationsprogramm die *Kommentare* beim Speichern nicht mehr zurückschreibt, und ggf. die komplette Formatierung ändert. Wenn die Konfigurationsdatei *per Hand* abgändert wird, sollte das Konfigurationsprogramm nur zum Aktualisieren verwendet werden.
@@ -519,7 +519,7 @@ T5: Schlüsselwort zu lang
 
 T6: Kommentar nicht abgeschlossen
 
--  Ein C-Kommentar ist nicht abgeschlossen worden. Tritt normalerweise nur am Ende einer Datei auf, wenn die Zeichenkombination "*/" nicht nach einem "/*" folgt. 
+-  Ein C-Kommentar ist nicht abgeschlossen worden. Tritt normalerweise nur am Ende einer Datei auf, wenn die Zeichenkombination "\*/" nicht nach einem "/\*" folgt. 
 
 T7: ASCII-Wert nicht abgeschlossen
 
@@ -608,11 +608,11 @@ Beachten Sie bitte, daß durch das Verfahren im *RAP!-System* die Kompressionsrat
 
 In allen Pfadangaben sind sogenannte Platzhalter möglich einzugeben, wobei folgende Arten unterstützt werden:
 
-"*", "xx*" sowie "*xx".
+"\*", "xx\*" sowie "\*xx".
 
-"*"	gilt für alle Dateien oder Verzeichnisse.  
-"xx*"	gilt für Dateien oder Verzeichnisse wie "xxtest" oder "xx" oder "xxyz".  
-"*xx"	gilt für Dateien oder Verzeichnisse wie "xx" oder "testxx" oder "zyxx".
+"\*"	gilt für alle Dateien oder Verzeichnisse.  
+"xx\*"	gilt für Dateien oder Verzeichnisse wie "xxtest" oder "xx" oder "xxyz".  
+"\*xx"	gilt für Dateien oder Verzeichnisse wie "xx" oder "testxx" oder "zyxx".
 
 
 
