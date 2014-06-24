@@ -1,6 +1,6 @@
-RAP! Inhaltsverzeichnis
+ï»¿RAP! Inhaltsverzeichnis
 
-Einführung
+EinfÃ¼hrung
 
 1	Grundprinzip  
 1.1	hierarchisches Dateiverwaltungssystem
@@ -12,8 +12,8 @@ Einführung
 2.4	Aktualisierung  
 2.5	Packer  
 2.6	Crypter, Passwort  
-2.7	ChunkGröße, OvlGröße  
-2.8	VolPräfix, VolSuffix  
+2.7	ChunkGrÃ¶ÃŸe, OvlGrÃ¶ÃŸe  
+2.8	VolPrÃ¤fix, VolSuffix  
 2.9	HandlerDatei, HandlerStack
 
 3	RAP! bei der Arbeit  
@@ -24,7 +24,7 @@ Einführung
 3.1.4	Systemdateien  
 3.1.5	wichtige Daten  
 3.2	komprimierte Dateien verarbeiten.  
-3.3	Installationen übertragen.  
+3.3	Installationen Ã¼bertragen.  
 3.4	Workbench-Benutzung.
 
 Anhang A	Defaultwerte der globalen Einstellungen  
@@ -34,104 +34,106 @@ Anhang D	RAP-Mount
 Anhang E	XPK-Standard  
 Anhang F	Platzhalter  
 Anhang G	Die mitgelieferten Packer "scn1" und "runl".  
-Anhang H	Tastaturkürzel im Konfigurationsprogramm.
+Anhang H	TastaturkÃ¼rzel im Konfigurationsprogramm.
 
+Diese Referenz wurde von Guid Ruhl verfasst und mit mit freundlicher Erlaubnis von Pearson â€‹Deutschland GmbH fÃ¼r die Freeware Version von RAP!TOP!COP! zur VerfÃ¼gung gestellt.
 
+(c) Pearson â€‹Deutschland GmbH
 
-# Einführung 
+# EinfÃ¼hrung 
 
-Durch ständig steigende Rechnergeschwindigkeit und immer effizienteren Algorithmen gehört das Komprimieren von Daten in der Computerwelt zur Alltäglichkeit. Auch auf dem Amiga haben diese Datenkomprimierer vor einigen Jahren den Einzug gehalten.
+Durch stÃ¤ndig steigende Rechnergeschwindigkeit und immer effizienteren Algorithmen gehÃ¶rt das Komprimieren von Daten in der Computerwelt zur AlltÃ¤glichkeit. Auch auf dem Amiga haben diese Datenkomprimierer vor einigen Jahren den Einzug gehalten.
 
-Üblich sind die Archivierer. Die teilweise umständlich vom AmigaDOS aus aufgerufen werden, um dann mit meistens langen Wartezeiten gesamte Verzeichnisse zu packen. Der Sinn hierin besteht wie der Name schon sagt hauptsächlich in der Archivierung der Daten.
+Ãœblich sind die Archivierer. Die teilweise umstÃ¤ndlich vom AmigaDOS aus aufgerufen werden, um dann mit meistens langen Wartezeiten gesamte Verzeichnisse zu packen. Der Sinn hierin besteht wie der Name schon sagt hauptsÃ¤chlich in der Archivierung der Daten.
 
-Einige andersdenkende Programmierer sind nun auf die Idee gekommen, komplette Programme zu packen, um sie dann beim Start zu entkomprimieren. Da aber der Programmteil, der die Daten entkomprimiert, vom Betriebssystem aufgerufen werden muß, kann nur das Hauptprogramm - die Datei, die auch wirklich aufgerufen wird - komprimiert werden. Meistens macht das bei größeren Anwendungen wenig Sinn. Bei diesem Verfahren spricht man hier auch vom *Echtzeit-dekomprimieren*, da auf schnelleren Rechnern kaum ein Zeitverlust beim Laden der Datei bemerkbar ist.
+Einige andersdenkende Programmierer sind nun auf die Idee gekommen, komplette Programme zu packen, um sie dann beim Start zu entkomprimieren. Da aber der Programmteil, der die Daten entkomprimiert, vom Betriebssystem aufgerufen werden muÃŸ, kann nur das Hauptprogramm - die Datei, die auch wirklich aufgerufen wird - komprimiert werden. Meistens macht das bei grÃ¶ÃŸeren Anwendungen wenig Sinn. Bei diesem Verfahren spricht man hier auch vom *Echtzeit-dekomprimieren*, da auf schnelleren Rechnern kaum ein Zeitverlust beim Laden der Datei bemerkbar ist.
 
-Die beiden oben geschilderten Verfahren sind die momentan noch am gebräuchlichsten. RAP! ist der erste professionelle Versuch auf dem Amiga ein anderes, neuartiges System einzuführen, das dem Benutzer den Komprimier- und Entkomprimier-Vorgang unsichtbar abnimmt. Durch dieses Verfahren ist es nun auch möglich reine Daten zu komprimieren und in Echtzeit (beim Laden) zu entkomprimieren, was mit den oben geschilderten Verfahren nur umständlich (programmgesteuert) realisierbar gewesen wären.
+Die beiden oben geschilderten Verfahren sind die momentan noch am gebrÃ¤uchlichsten. RAP! ist der erste professionelle Versuch auf dem Amiga ein anderes, neuartiges System einzufÃ¼hren, das dem Benutzer den Komprimier- und Entkomprimier-Vorgang unsichtbar abnimmt. Durch dieses Verfahren ist es nun auch mÃ¶glich reine Daten zu komprimieren und in Echtzeit (beim Laden) zu entkomprimieren, was mit den oben geschilderten Verfahren nur umstÃ¤ndlich (programmgesteuert) realisierbar gewesen wÃ¤ren.
 
-Im Gegensatz zu den beiden anderen Verfahren verändert RAP! nach außen hin keine Dateien. RAP! bildet eine Schnittstelle zwischen dem Benutzer (den Programmen) und dem Datenträger. Werden nun vom Benutzer Daten auf den Träger geschrieben, schaltet sich RAP! dazwischen, komprimiert die Daten unsichtbar, und läßt dem Benutzer zum Beispiel im Glauben, daß die Datei doch jederzeit in der Originallänge vorliegt. Genauso ist das Verhalten beim Laden. Unsichtbar, egal, ob Daten in einem Texteditor eingeladen, oder irgendwelche Programme gestartet werden. Nicht einmal das Betriebssystem bekommt etwas davon mit, daß die Daten gepackt wurden. Auch der Benutzer wird zumindest beim entkomprimieren von Daten keinen wesentlichen Unterschied bemerken.
+Im Gegensatz zu den beiden anderen Verfahren verÃ¤ndert RAP! nach auÃŸen hin keine Dateien. RAP! bildet eine Schnittstelle zwischen dem Benutzer (den Programmen) und dem DatentrÃ¤ger. Werden nun vom Benutzer Daten auf den TrÃ¤ger geschrieben, schaltet sich RAP! dazwischen, komprimiert die Daten unsichtbar, und lÃ¤ÃŸt dem Benutzer zum Beispiel im Glauben, daÃŸ die Datei doch jederzeit in der OriginallÃ¤nge vorliegt. Genauso ist das Verhalten beim Laden. Unsichtbar, egal, ob Daten in einem Texteditor eingeladen, oder irgendwelche Programme gestartet werden. Nicht einmal das Betriebssystem bekommt etwas davon mit, daÃŸ die Daten gepackt wurden. Auch der Benutzer wird zumindest beim entkomprimieren von Daten keinen wesentlichen Unterschied bemerken.
 
 
 
 
 # 1 Grundprinzip 
 
-Da bei Computerprogrammen (zumindest auf dem Amiga) FLEXIBILITÄT groß geschrieben wird, wurde zur Erweiterung des Datenkomprimierers noch einige Zusatzfunktionen integriert, die nachfolgend erklärt werden sollen.
+Da bei Computerprogrammen (zumindest auf dem Amiga) FLEXIBILITÃ„T groÃŸ geschrieben wird, wurde zur Erweiterung des Datenkomprimierers noch einige Zusatzfunktionen integriert, die nachfolgend erklÃ¤rt werden sollen.
 
 
 
 
 ## 1.1 hierarchisches Dateiverwaltungssystem 
 
-Mit RAP! ist es nicht nur möglich eine gesamte Diskette oder Festplattenpartition zu komprimieren, sondern RAP! arbeitet auch Verzeichnis-, beziehungsweise Datei-orientiert. Mit dem *hierarchischen Dateiverwaltungssystem* kann für jedes Verzeichnis. Ja sogar für jede Datei der Komprimierer und einige andere Parameter eingestellt werden.
+Mit RAP! ist es nicht nur mÃ¶glich eine gesamte Diskette oder Festplattenpartition zu komprimieren, sondern RAP! arbeitet auch Verzeichnis-, beziehungsweise Datei-orientiert. Mit dem *hierarchischen Dateiverwaltungssystem* kann fÃ¼r jedes Verzeichnis. Ja sogar fÃ¼r jede Datei der Komprimierer und einige andere Parameter eingestellt werden.
 
-Wichtig ist in diesem Zusammenhang zu wissen, daß diese vom Benutzer mit Hilfe des Konfigurationsprogramms eingegebene Verzeichnisstruktur nicht transparent zu der wirklich vorhandenen Struktur ist. Es können also irgendwelche Parameter für ein Verzeichnis eingestellt werden, obwohl dieses Verzeichnis momentan noch nicht vorhanden ist. Besonders bei der Verwendung zusammen mit *entfernbaren Datenträger* (Disketten) bringt dieses System Vorteile. Der FileHandler von RAP! überprüft bei jeder Neuerstellung einer Datei die eingestellten Parameter und handelt dann dementsprechend.
+Wichtig ist in diesem Zusammenhang zu wissen, daÃŸ diese vom Benutzer mit Hilfe des Konfigurationsprogramms eingegebene Verzeichnisstruktur nicht transparent zu der wirklich vorhandenen Struktur ist. Es kÃ¶nnen also irgendwelche Parameter fÃ¼r ein Verzeichnis eingestellt werden, obwohl dieses Verzeichnis momentan noch nicht vorhanden ist. Besonders bei der Verwendung zusammen mit *entfernbaren DatentrÃ¤ger* (Disketten) bringt dieses System Vorteile. Der FileHandler von RAP! Ã¼berprÃ¼ft bei jeder Neuerstellung einer Datei die eingestellten Parameter und handelt dann dementsprechend.
 
-Ein weiterer Vorteil ist natürlich auch die Anwendung von sogenannten spezialisierten Packern, oder ganz einfach das Ausschalten des Packers. Es wäre Unsinn ein Verzeichnis zu komprimieren, in dem sich sowieso nur gepackte Archive befinden. Dies kostet nur Zeit, und verursacht sogar in Ausnahmefällen, daß die Dateien intern länger werden.
+Ein weiterer Vorteil ist natÃ¼rlich auch die Anwendung von sogenannten spezialisierten Packern, oder ganz einfach das Ausschalten des Packers. Es wÃ¤re Unsinn ein Verzeichnis zu komprimieren, in dem sich sowieso nur gepackte Archive befinden. Dies kostet nur Zeit, und verursacht sogar in AusnahmefÃ¤llen, daÃŸ die Dateien intern lÃ¤nger werden.
 
-(technische Anmerkung:  Die Daten werden im unkomprimierten Format gespeichert, aber durch spezielle Verkettungsstrukturen kann die Datei trotzdem länger werden)
+(technische Anmerkung:  Die Daten werden im unkomprimierten Format gespeichert, aber durch spezielle Verkettungsstrukturen kann die Datei trotzdem lÃ¤nger werden)
 
-Durch diese Hierarchie erlaubt RAP! Ihnen zusätzlich auch eine *Passwortvergabe*. Es ist möglich für jedes Verzeichnis ein anderes Passwort zu vergeben, so daß nun auch mehrere Anwender eines Rechners Ihre privaten Daten vor Zugriffe schützen können. Aus technischen Gründen ist die Dateienstruktur nach außen hin auch bei noch nicht eingegebenem Passwort sichtbar. Nur das Starten oder Verarbeiten der Daten ist nicht möglich. Unter der Amiga-Workbench ergibt sich dadurch ein netter Effekt: die Icons, die für Workbench-Programme notwendig sind (.info-Dateien) werden kodiert, und sind somit nicht mehr von der Workbench aus sichtbar.
+Durch diese Hierarchie erlaubt RAP! Ihnen zusÃ¤tzlich auch eine *Passwortvergabe*. Es ist mÃ¶glich fÃ¼r jedes Verzeichnis ein anderes Passwort zu vergeben, so daÃŸ nun auch mehrere Anwender eines Rechners Ihre privaten Daten vor Zugriffe schÃ¼tzen kÃ¶nnen. Aus technischen GrÃ¼nden ist die Dateienstruktur nach auÃŸen hin auch bei noch nicht eingegebenem Passwort sichtbar. Nur das Starten oder Verarbeiten der Daten ist nicht mÃ¶glich. Unter der Amiga-Workbench ergibt sich dadurch ein netter Effekt: die Icons, die fÃ¼r Workbench-Programme notwendig sind (.info-Dateien) werden kodiert, und sind somit nicht mehr von der Workbench aus sichtbar.
 
-Durch die Kodierung der Icons kann dann beim Öffnen eines Verzeichnisses auf der Workbench schon eine lästige *Passwortabfrage* erscheinen. Der FileHandler des RAP!-systems versucht lediglich das Icon zu dekodieren.
+Durch die Kodierung der Icons kann dann beim Ã–ffnen eines Verzeichnisses auf der Workbench schon eine lÃ¤stige *Passwortabfrage* erscheinen. Der FileHandler des RAP!-systems versucht lediglich das Icon zu dekodieren.
 
 
 
 
 # 2 Das Konfigurationsprogramm 
 
-Wie bei anderen Programmen benötigt auch RAP! bestimmte Parameter, die vom Anwender eingestellt werden müssen. Um die Eingabe möglichst einfach zu gestalten, wurde ein Programm entwickelt, das sich in das Konzept der OS2.x Konfigurationsprogramme einreiht.
+Wie bei anderen Programmen benÃ¶tigt auch RAP! bestimmte Parameter, die vom Anwender eingestellt werden mÃ¼ssen. Um die Eingabe mÃ¶glichst einfach zu gestalten, wurde ein Programm entwickelt, das sich in das Konzept der OS2.x Konfigurationsprogramme einreiht.
 
 
 
 
 ## 2.1 Einstieg: Beispiel mit der Ram Disk. 
 
-Nach einer erfolgreichen Installation ist der erste Schritt der Aufruf des Konfigurationsprogramms, das sich im "Prefs"-verzeichnis des Datenträgers befindet, auf dem RAP! installiert wurde. Um das Konfiguration zu starten, muß das Icon mit einem Doppelklick angewählt werden.
+Nach einer erfolgreichen Installation ist der erste Schritt der Aufruf des Konfigurationsprogramms, das sich im "Prefs"-verzeichnis des DatentrÃ¤gers befindet, auf dem RAP! installiert wurde. Um das Konfiguration zu starten, muÃŸ das Icon mit einem Doppelklick angewÃ¤hlt werden.
 
-Wenige Sekunden danach erscheint die Oberfläche von RAPPrefs, *das Basisfenster*, welches horizontal in zwei Bereiche gegliedert ist. Links ein Anzeigebereich, in dem die *Laufwerkseinstellungen* sowie die *Pfadeinstellungen* dargestellt werden, und rechts die Aktionsknöpfe, die wiederum in Unterabschnitten unterteilt sind. Nach einer erfolgreichen Installation sollte in dem linken Anzeigebereich nur ein *GLOBAL:* sichtbar sein.
+Wenige Sekunden danach erscheint die OberflÃ¤che von RAPPrefs, *das Basisfenster*, welches horizontal in zwei Bereiche gegliedert ist. Links ein Anzeigebereich, in dem die *Laufwerkseinstellungen* sowie die *Pfadeinstellungen* dargestellt werden, und rechts die AktionsknÃ¶pfe, die wiederum in Unterabschnitten unterteilt sind. Nach einer erfolgreichen Installation sollte in dem linken Anzeigebereich nur ein *GLOBAL:* sichtbar sein.
 
-Um nun in die *globalen Laufwerkseinstellungen* zu gelangen, muß `GLOBAL:` mit einem Doppelklick oder einem Klick mit der anschließenden Auswahl von `Editieren` angewählt werden. Von den *globalen Laufwerkseinstellungen* werden die Einstellungen, die in den *Laufwerkseinstellungen* beziehungsweise *Pfadeinstellungen* nicht gemacht werden, übernommen. Werden in den globalen Einstellungen Parameter nicht gesetzt, werden sie von den intern fest gespeicherten *Default-Werten* (siehe Anhang A) übernommen.
+Um nun in die *globalen Laufwerkseinstellungen* zu gelangen, muÃŸ `GLOBAL:` mit einem Doppelklick oder einem Klick mit der anschlieÃŸenden Auswahl von `Editieren` angewÃ¤hlt werden. Von den *globalen Laufwerkseinstellungen* werden die Einstellungen, die in den *Laufwerkseinstellungen* beziehungsweise *Pfadeinstellungen* nicht gemacht werden, Ã¼bernommen. Werden in den globalen Einstellungen Parameter nicht gesetzt, werden sie von den intern fest gespeicherten *Default-Werten* (siehe Anhang A) Ã¼bernommen.
 
-Wir wollen hier die Werte nicht verändern, und stellen nur zum Test einen Packer ein. Klicken Sie hierzu einmal auf den *Vererbungsknopf* (rechts neben dem Text "Packer"), um die Einstellung des Packers zu ermöglichen (der Knopf mit den 2 gefüllten und einem ungefüllten Rechteck). Nun klicken Sie nun noch in die Listenanzeige auf den nach einer erfolgreichen Installation vorhandenen "scn1"-Packer, um Ihn anzuwählen. Wenn Sie jetzt noch den links unten befindliche OK-Knopf drücken, ist der Packer *global* gesetzt.
+Wir wollen hier die Werte nicht verÃ¤ndern, und stellen nur zum Test einen Packer ein. Klicken Sie hierzu einmal auf den *Vererbungsknopf* (rechts neben dem Text "Packer"), um die Einstellung des Packers zu ermÃ¶glichen (der Knopf mit den 2 gefÃ¼llten und einem ungefÃ¼llten Rechteck). Nun klicken Sie nun noch in die Listenanzeige auf den nach einer erfolgreichen Installation vorhandenen "scn1"-Packer, um Ihn anzuwÃ¤hlen. Wenn Sie jetzt noch den links unten befindliche OK-Knopf drÃ¼cken, ist der Packer *global* gesetzt.
 
-Wir befinden uns wieder im *Basisfenster*, das bis jetzt noch keine Veränderung erfahren hat. Der Packer wurde zwar schon eingestellt, aber es fehlt noch eine wichtige Information, um das Packen der Dateien zu erlauben. Dem Programm muß noch mitgeteilt werden, für welches Laufwerk die eingestellten Parameter überhaupt gelten sollen. Da die Ram Disk meistens vorhanden ist, werden wir dem Konfigurationsprogramm mitteilen, daß zu Testzwecken zuerst "RAM:" verwendet werden soll.
+Wir befinden uns wieder im *Basisfenster*, das bis jetzt noch keine VerÃ¤nderung erfahren hat. Der Packer wurde zwar schon eingestellt, aber es fehlt noch eine wichtige Information, um das Packen der Dateien zu erlauben. Dem Programm muÃŸ noch mitgeteilt werden, fÃ¼r welches Laufwerk die eingestellten Parameter Ã¼berhaupt gelten sollen. Da die Ram Disk meistens vorhanden ist, werden wir dem Konfigurationsprogramm mitteilen, daÃŸ zu Testzwecken zuerst "RAM:" verwendet werden soll.
 
-Wählen Sie hierfür den Knopf `Anfügen/Laufwerk` an, um die *Laufwerkseinstellungen* aufzurufen. Sofort wird eine Ähnlichkeit zu den globalen Einstellungen erkennbar. Einige Parameter können hier neu eingestellt werden, beziehungsweise auf ein bestimmtes Laufwerk *lokalisiert* werden. Momentan werden aber nur die Einstellungen *SYS-Laufwerk* und *RAP-Laufwerk* benötigt. Wählen Sie bei *SYS-Laufwerk* `RAM:` an, und geben Sie bei *RAP-Laufwerk* zum Beispiel ein `RAP:` an. Der *RAP-Laufwerksname* ist beliebig wählbar, darf aber nicht schon einmal verwendet worden sein.
+WÃ¤hlen Sie hierfÃ¼r den Knopf `AnfÃ¼gen/Laufwerk` an, um die *Laufwerkseinstellungen* aufzurufen. Sofort wird eine Ã„hnlichkeit zu den globalen Einstellungen erkennbar. Einige Parameter kÃ¶nnen hier neu eingestellt werden, beziehungsweise auf ein bestimmtes Laufwerk *lokalisiert* werden. Momentan werden aber nur die Einstellungen *SYS-Laufwerk* und *RAP-Laufwerk* benÃ¶tigt. WÃ¤hlen Sie bei *SYS-Laufwerk* `RAM:` an, und geben Sie bei *RAP-Laufwerk* zum Beispiel ein `RAP:` an. Der *RAP-Laufwerksname* ist beliebig wÃ¤hlbar, darf aber nicht schon einmal verwendet worden sein.
 
-Nun wird "RAP:" zur neuen "RAM:" erklärt. Der Doppelpunkt ist bei beiden Einstellungen optional. Nachdem wieder wie vorher auf den OK!-knopf geklickt wurde, befinden wir uns wieder im *Basisfenster*.
+Nun wird "RAP:" zur neuen "RAM:" erklÃ¤rt. Der Doppelpunkt ist bei beiden Einstellungen optional. Nachdem wieder wie vorher auf den OK!-knopf geklickt wurde, befinden wir uns wieder im *Basisfenster*.
 
-Jetzt ist hier eine Änderung erkennbar. Unter dem `GLOBAL:` müßte eine *Laufwerkszuweisung* `RAM:  -> RAP:` sichtbar werden. Die *Laufwerkszuweisungen* stehen immer in der ersten Spalte und haben ein "->" zwischen den *Laufwerksnamen*. Später können hier noch Pfade angefügt werden.
+Jetzt ist hier eine Ã„nderung erkennbar. Unter dem `GLOBAL:` mÃ¼ÃŸte eine *Laufwerkszuweisung* `RAM:  -> RAP:` sichtbar werden. Die *Laufwerkszuweisungen* stehen immer in der ersten Spalte und haben ein "->" zwischen den *Laufwerksnamen*. SpÃ¤ter kÃ¶nnen hier noch Pfade angefÃ¼gt werden.
 
-Um das Programm zu verlassen und die Einstellung auszuprobieren, kann nun im *Basisfenster* auf `Sichern` oder `Verwenden` geklickt werden. Beachten Sie bitte, daß falls beim `Sichern` automatisch die vorhandenen Einstellungen beim nächsten *Bootvorgang* ausgeführt werden, beziehungsweise die *RAP-Laufwerke* aktiv werden.
+Um das Programm zu verlassen und die Einstellung auszuprobieren, kann nun im *Basisfenster* auf `Sichern` oder `Verwenden` geklickt werden. Beachten Sie bitte, daÃŸ falls beim `Sichern` automatisch die vorhandenen Einstellungen beim nÃ¤chsten *Bootvorgang* ausgefÃ¼hrt werden, beziehungsweise die *RAP-Laufwerke* aktiv werden.
 
-Nun sollte in den nächsten Sekunden auf Ihrer Workbench zusätzlich zu den sonst vorhandenen Laufwerk-Icons noch ein Icon erscheinen, das den Namen der Ram Disk mit einem anführenden "_" trägt. Es bifinden sich nun auf der Workbench sozusagen zwei Ram Disks. In Wirklichkeit sind die darin abgelegten Daten die selben. Nur die Kommunikation geht verschiedene Wege. Probieren wir es aus. Nehmen Sie ein Icon eines beliebigen Programms und ziehen Sie es auf das Ram-Icon ohne dem "_". Die Datei wird in die Ram Disk kopiert (Achten Sie bitte möglichst auf den freien Speicher). Wenn nun auf die "Ram Disk" doppelgeklickt wird, wird dasselbe Programm in dem Fenster des anderen *Laufwerks* erkennbar. Bei einem Doppelklick auf die Ram_Disk mit "_" erscheint ein Fenster mit dem selben Inhalt. Das Programm befindet sich zweimal in der Ram Disk. Wie vorher aber schon gesagt sind die Daten die selben. Es wird also kein zusätzlicher Speicher benötigt.
+Nun sollte in den nÃ¤chsten Sekunden auf Ihrer Workbench zusÃ¤tzlich zu den sonst vorhandenen Laufwerk-Icons noch ein Icon erscheinen, das den Namen der Ram Disk mit einem anfÃ¼hrenden "_" trÃ¤gt. Es bifinden sich nun auf der Workbench sozusagen zwei Ram Disks. In Wirklichkeit sind die darin abgelegten Daten die selben. Nur die Kommunikation geht verschiedene Wege. Probieren wir es aus. Nehmen Sie ein Icon eines beliebigen Programms und ziehen Sie es auf das Ram-Icon ohne dem "_". Die Datei wird in die Ram Disk kopiert (Achten Sie bitte mÃ¶glichst auf den freien Speicher). Wenn nun auf die "Ram Disk" doppelgeklickt wird, wird dasselbe Programm in dem Fenster des anderen *Laufwerks* erkennbar. Bei einem Doppelklick auf die Ram_Disk mit "_" erscheint ein Fenster mit dem selben Inhalt. Das Programm befindet sich zweimal in der Ram Disk. Wie vorher aber schon gesagt sind die Daten die selben. Es wird also kein zusÃ¤tzlicher Speicher benÃ¶tigt.
 
-So, nun machen wir das Ganze mit Hilfe der Discard oder Delete-Funktion der Workbench wieder rückgängig, und probieren den zweiten Weg aus: Löschen Sie also nun die Datei aus dem Speicher (Sie können hierfür eine der beiden Ram_Disks hernehmen), schließen die Fenster und kopieren Sie die Datei wieder durch Herüberziehen des Icons. Nicht aber wie im vorigen Beispiel in die *normale* Ram_Disk sondern in die neu angelegte. Nach einem bemerkbaren Zeitverlust beendet sich der Kopiervorgang. Es funktioniert also wie oben beschrieben, nur mit dem Unterschied, daß einfach ein anderes Laufwerk hergenommen wurde.
+So, nun machen wir das Ganze mit Hilfe der Discard oder Delete-Funktion der Workbench wieder rÃ¼ckgÃ¤ngig, und probieren den zweiten Weg aus: LÃ¶schen Sie also nun die Datei aus dem Speicher (Sie kÃ¶nnen hierfÃ¼r eine der beiden Ram_Disks hernehmen), schlieÃŸen die Fenster und kopieren Sie die Datei wieder durch HerÃ¼berziehen des Icons. Nicht aber wie im vorigen Beispiel in die *normale* Ram_Disk sondern in die neu angelegte. Nach einem bemerkbaren Zeitverlust beendet sich der Kopiervorgang. Es funktioniert also wie oben beschrieben, nur mit dem Unterschied, daÃŸ einfach ein anderes Laufwerk hergenommen wurde.
 
-Sehen wir nach, was sich getan hat, indem wir die beiden Fenster der Ram Disk durch Doppelklicken öffnen. Sofort wird erkennbar, daß das *kopierte* Programm nicht mehr in beiden Fenstern sichtbar ist. Nur noch in der "_Ram Disk". Dies ist durch den Umstand zu erklären, daß das Icon gepackt wurde, und somit nur in der Ram Disk sichtbar ist, die vom RAP!-System kontrolliert wird. Hier wird in *Echtzeit* das Icon dekomprimiert und dargestellt. Die Dateien sind im übrigen auch in beiden Ram Disks vorhanden, nur sind sie in der einen ohne "_", die nicht vom *RAP!-System* kontrolliert wird, gepackt abgelegt, und somit für den Anwender fast unbrauchbar. Ausnahme ist das zum Beispiel mögliche Kopieren auf einen anderen mit RAP! versehenen Datenträger (auch per *DFÜ*!), um sich das Entkomprimieren und Rekomprimieren zu ersparen.
+Sehen wir nach, was sich getan hat, indem wir die beiden Fenster der Ram Disk durch Doppelklicken Ã¶ffnen. Sofort wird erkennbar, daÃŸ das *kopierte* Programm nicht mehr in beiden Fenstern sichtbar ist. Nur noch in der "_Ram Disk". Dies ist durch den Umstand zu erklÃ¤ren, daÃŸ das Icon gepackt wurde, und somit nur in der Ram Disk sichtbar ist, die vom RAP!-System kontrolliert wird. Hier wird in *Echtzeit* das Icon dekomprimiert und dargestellt. Die Dateien sind im Ã¼brigen auch in beiden Ram Disks vorhanden, nur sind sie in der einen ohne "_", die nicht vom *RAP!-System* kontrolliert wird, gepackt abgelegt, und somit fÃ¼r den Anwender fast unbrauchbar. Ausnahme ist das zum Beispiel mÃ¶gliche Kopieren auf einen anderen mit RAP! versehenen DatentrÃ¤ger (auch per *DFÃœ*!), um sich das Entkomprimieren und Rekomprimieren zu ersparen.
 
-Natürlich kann jetzt nicht nur das Icon angezeigt werden, sondern auch das Programm wie gewohnt gestartet werden. Es nimmt weniger Platz auf der Ram-Disk ein, und wird beim Doppelklicken in Echtzeit dekomprimiert und gestartet. Wobei die Dekomprimierung hier wirklich fast immer unmerkbar abläuft.
+NatÃ¼rlich kann jetzt nicht nur das Icon angezeigt werden, sondern auch das Programm wie gewohnt gestartet werden. Es nimmt weniger Platz auf der Ram-Disk ein, und wird beim Doppelklicken in Echtzeit dekomprimiert und gestartet. Wobei die Dekomprimierung hier wirklich fast immer unmerkbar ablÃ¤uft.
 
-Vielleicht alles am Anfang etwas schwierig zu verstehen. Aber nach einer kleineren Einarbeitungszeit kommt man schon dahinter, wie man was in welches Verzeichnis kopieren, löschen oder bewegen soll, damit es komprimiert oder dekomprimiert wird.
+Vielleicht alles am Anfang etwas schwierig zu verstehen. Aber nach einer kleineren Einarbeitungszeit kommt man schon dahinter, wie man was in welches Verzeichnis kopieren, lÃ¶schen oder bewegen soll, damit es komprimiert oder dekomprimiert wird.
 
-Komplizierter wird es bei den Pfadeinstellungen, die im nächsten Kapitel eingeführt werden.
+Komplizierter wird es bei den Pfadeinstellungen, die im nÃ¤chsten Kapitel eingefÃ¼hrt werden.
 
 
 
 
 ## 2.2 Pfadeinstellungen 
 
-Zusätzlich zu den *Laufwerkseinstellungen* kann nun auch für jeden Pfad oder Datei eines Laufwerks Parameter eingestellt werden. Stellen wir uns vor, daß sich zum Beispiel ein Verzeichnis auf Ihrer Festplatte mit dem Namen "arc" befindet, das nur archivierte Dateien enthält. Natürlich ist es nicht sinnvoll dieses Verzeichnis auch noch zu komprimieren, da es ja schon komprimierte Dateien enthält.
+ZusÃ¤tzlich zu den *Laufwerkseinstellungen* kann nun auch fÃ¼r jeden Pfad oder Datei eines Laufwerks Parameter eingestellt werden. Stellen wir uns vor, daÃŸ sich zum Beispiel ein Verzeichnis auf Ihrer Festplatte mit dem Namen "arc" befindet, das nur archivierte Dateien enthÃ¤lt. NatÃ¼rlich ist es nicht sinnvoll dieses Verzeichnis auch noch zu komprimieren, da es ja schon komprimierte Dateien enthÃ¤lt.
 
-Probieren wir es wie im letzten Kapitel beschrieben mit der Ram Disk aus: Falls die *Laufwerkszuweisung* ("RAM:  -> RAP:") nicht schon aktiviert (invertiert) ist, muß sie durch einen Klick angewählt werden, um dem Konfigurationsprogramm mitzuteilen, daß noch Informationen zu diesem Laufwerk anfügt werden.
+Probieren wir es wie im letzten Kapitel beschrieben mit der Ram Disk aus: Falls die *Laufwerkszuweisung* ("RAM:  -> RAP:") nicht schon aktiviert (invertiert) ist, muÃŸ sie durch einen Klick angewÃ¤hlt werden, um dem Konfigurationsprogramm mitzuteilen, daÃŸ noch Informationen zu diesem Laufwerk anfÃ¼gt werden.
 
-Durch einen Klick auf den Knopf `Anfügen/Pfad` oder `p`, werden die *Pfadeinstellungen* aufgerufen. Auch hier ähnelt der Bildschirmaufbau dem der *Laufwerkseinstellungen*. Es gibt zwei Arten von *Pfadeinstellungen*: *Exclude und Include*. Ein *Exclude-Pfad* ist ein Pfad, der nicht bearbeitet wird. Er wird also auch zum Beispiel bei einem Zugriff auf das *RAP-Laufwerk* nicht komprimiert, obwohl entsprechende Parameter eingestellt wurden. Da wir das Verzeichnis "arc" später nicht bearbeiten (nicht komprimieren) wollen, müssen diese Pfadeinstellung auf `Exclude` gestellt werden. Dies geschieht, indem das sogenannte Cycle-Gadget gedrückt wird. Die Anzeige sollte nun von `Include` auf `Exclude` wechseln.
+Durch einen Klick auf den Knopf `AnfÃ¼gen/Pfad` oder `p`, werden die *Pfadeinstellungen* aufgerufen. Auch hier Ã¤hnelt der Bildschirmaufbau dem der *Laufwerkseinstellungen*. Es gibt zwei Arten von *Pfadeinstellungen*: *Exclude und Include*. Ein *Exclude-Pfad* ist ein Pfad, der nicht bearbeitet wird. Er wird also auch zum Beispiel bei einem Zugriff auf das *RAP-Laufwerk* nicht komprimiert, obwohl entsprechende Parameter eingestellt wurden. Da wir das Verzeichnis "arc" spÃ¤ter nicht bearbeiten (nicht komprimieren) wollen, mÃ¼ssen diese Pfadeinstellung auf `Exclude` gestellt werden. Dies geschieht, indem das sogenannte Cycle-Gadget gedrÃ¼ckt wird. Die Anzeige sollte nun von `Include` auf `Exclude` wechseln.
 
-Nun fehlt uns noch die *Verzeichnisauswahl*. Das Konfigurationsprogramm muß wissen, welches Verzeichnis es *excluden* muß. Diese Auswahl kann entweder durch einen Druck auf `Lesen` und einer anschließendem Auswahl durch einen Mausklick in der darunterliegenden Listenanzeige geschehen, oder durch Direkteingabe des Verzeichnisses im Eingabefeld unter der Listenanzeige. Hier können auch die im Anhang F beschriebenen Platzhalter verwendet werden.
+Nun fehlt uns noch die *Verzeichnisauswahl*. Das Konfigurationsprogramm muÃŸ wissen, welches Verzeichnis es *excluden* muÃŸ. Diese Auswahl kann entweder durch einen Druck auf `Lesen` und einer anschlieÃŸendem Auswahl durch einen Mausklick in der darunterliegenden Listenanzeige geschehen, oder durch Direkteingabe des Verzeichnisses im Eingabefeld unter der Listenanzeige. Hier kÃ¶nnen auch die im Anhang F beschriebenen Platzhalter verwendet werden.
 
-Falls das Verzeichnis "arc" in der Ram Disk schon erstellt wurde, kann nun mit `Lesen` die Verzeichnisse im Listenfenster angezeigt und augewählt werden. Falls das Verzeichnis noch nicht vorhanden ist, muß per Hand "arc" in das Eingabefeld unter der Listenanzeige eingegeben werden.
+Falls das Verzeichnis "arc" in der Ram Disk schon erstellt wurde, kann nun mit `Lesen` die Verzeichnisse im Listenfenster angezeigt und augewÃ¤hlt werden. Falls das Verzeichnis noch nicht vorhanden ist, muÃŸ per Hand "arc" in das Eingabefeld unter der Listenanzeige eingegeben werden.
 
-Klicken Sie nun auf `OK!` um wieder in das *Basisfenster* zurückzukommen. Auf dem Bildschirm müßte nun folgendes Sichtbar sein:
+Klicken Sie nun auf `OK!` um wieder in das *Basisfenster* zurÃ¼ckzukommen. Auf dem Bildschirm mÃ¼ÃŸte nun folgendes Sichtbar sein:
 
 	
 	GLOBAL:        (dunkel oder normal)
@@ -139,15 +141,15 @@ Klicken Sie nun auf `OK!` um wieder in das *Basisfenster* zurückzukommen. Auf de
 	  >arc         (hell oder kursiv)
 	
 
-Wie Sie vielleicht sofort bemerkt haben, wird das `>arc` hell (oder auf einer *2-farben Workbench* kursiv) dargestellt. Hell ist ein Hinweis darauf, daß diese *Pfadeinstellung* *excluded* ist, also der Pfad arc in der Ram Disk nicht bearbeitet wird.
+Wie Sie vielleicht sofort bemerkt haben, wird das `>arc` hell (oder auf einer *2-farben Workbench* kursiv) dargestellt. Hell ist ein Hinweis darauf, daÃŸ diese *Pfadeinstellung* *excluded* ist, also der Pfad arc in der Ram Disk nicht bearbeitet wird.
 
-Mit Hilfe der Funktion `Anfügen/Unterpfad` kann nun auch zum Beispiel ein Unterverzeichnis von "arc" wieder bearbeitet werden. Stellen wir uns vor, daß sich zwar im "arc"-verzeichnis nur komprimierte Dateien befinden, aber ab und zu mal eine komprimierte Datei in das Verzeichnis "arc/unarc" entkomprimiert wird, um die Daten zu anschließend andersweitig zu verarbeiten. In diesem Fall wäre es sicherlich sinnvoll, das Unterverzeichnis "unarc" wieder zu komprimieren, da sich darin nur unkomprimierte Daten befinden.
+Mit Hilfe der Funktion `AnfÃ¼gen/Unterpfad` kann nun auch zum Beispiel ein Unterverzeichnis von "arc" wieder bearbeitet werden. Stellen wir uns vor, daÃŸ sich zwar im "arc"-verzeichnis nur komprimierte Dateien befinden, aber ab und zu mal eine komprimierte Datei in das Verzeichnis "arc/unarc" entkomprimiert wird, um die Daten zu anschlieÃŸend andersweitig zu verarbeiten. In diesem Fall wÃ¤re es sicherlich sinnvoll, das Unterverzeichnis "unarc" wieder zu komprimieren, da sich darin nur unkomprimierte Daten befinden.
 
-Wählen Sie also `>arc` durch einen einfachen Klick an, und drücken auf den Knopf `Anfügen/Unterpfad` oder `u` um die *Pfadeinstellungen* für einen Unterpfad anzufügen.
+WÃ¤hlen Sie also `>arc` durch einen einfachen Klick an, und drÃ¼cken auf den Knopf `AnfÃ¼gen/Unterpfad` oder `u` um die *Pfadeinstellungen* fÃ¼r einen Unterpfad anzufÃ¼gen.
 
 Nun befinden befinden wir uns wieder in den *Pfadeinstellungen*. Hier lassen Sie alles wie gehabt, und geben im Eingabefeld links unten den Pfad "unarc" ein. Falls das Verzeichnis schon existiert kann hier die Auswahl durch einem Druck auf `Lesen` vereinfacht werden.
 
-Nun wieder `OK!` um in das Basisfenster zu gelangen. Die Listenanzeige sollte nun folgendermaßen aussehen:
+Nun wieder `OK!` um in das Basisfenster zu gelangen. Die Listenanzeige sollte nun folgendermaÃŸen aussehen:
 
 	
 	GLOBAL:        (dunkel oder normal)
@@ -156,18 +158,18 @@ Nun wieder `OK!` um in das Basisfenster zu gelangen. Die Listenanzeige sollte nu
 	    >unarc     (dunkel oder normal)
 	
 
-Wie Sie schon sehen können ist durch die Angabe von `Anfügen/Unterpfad` "unarc" in eine andere Ebene gerutscht. "unarc" ist weiter rechts von "arc" plaziert, was soviel bedeutet, daß auch in der Dateienstruktur dieses Verzeichnis eine Ebene weiter unten liegt.
+Wie Sie schon sehen kÃ¶nnen ist durch die Angabe von `AnfÃ¼gen/Unterpfad` "unarc" in eine andere Ebene gerutscht. "unarc" ist weiter rechts von "arc" plaziert, was soviel bedeutet, daÃŸ auch in der Dateienstruktur dieses Verzeichnis eine Ebene weiter unten liegt.
 
 
 
 
 ## 2.3 Globale Pfadeinstellungen, Blockfunktionen 
 
-Manchmal ist es notwendig, daß bestimmte Pfadeinstellungen auf jedem Datenträger eingestellt werden sollen, die auf jeden durch RAP! angesprochenen Datenträger gemacht werden sollten. Sollen zum Beispiel mehrere Festplatten oder Disketten, auf denen sich je ein "arc"-verzeichnis befindet, das nicht gepackt werden soll, bearbeitet werden, ist es zwar mit den *Blockfunktionen* möglich die Parameter an ein anderes Laufwerk anzufügen, würde aber nach einiger Zeit ziemlich irritierend werden. Um nun eine *globale Pfadeinstellung* vorzunehmen, klicken Sie beim `Anfügen/Pfad` nicht vorher auf ein Laufwerk in der *Listenanzeige*, sondern auf `GLOBAL:`. Falls noch das Beispiel im vorherigen Kapitel eingestellt ist, können hier auch gleich die *Blockfunktionen* ausprobiert werden:
+Manchmal ist es notwendig, daÃŸ bestimmte Pfadeinstellungen auf jedem DatentrÃ¤ger eingestellt werden sollen, die auf jeden durch RAP! angesprochenen DatentrÃ¤ger gemacht werden sollten. Sollen zum Beispiel mehrere Festplatten oder Disketten, auf denen sich je ein "arc"-verzeichnis befindet, das nicht gepackt werden soll, bearbeitet werden, ist es zwar mit den *Blockfunktionen* mÃ¶glich die Parameter an ein anderes Laufwerk anzufÃ¼gen, wÃ¼rde aber nach einiger Zeit ziemlich irritierend werden. Um nun eine *globale Pfadeinstellung* vorzunehmen, klicken Sie beim `AnfÃ¼gen/Pfad` nicht vorher auf ein Laufwerk in der *Listenanzeige*, sondern auf `GLOBAL:`. Falls noch das Beispiel im vorherigen Kapitel eingestellt ist, kÃ¶nnen hier auch gleich die *Blockfunktionen* ausprobiert werden:
 
-Klicken Sie `>arc` an, und gehen auf die Blockfunktion `Ausschneiden` rechts unten, oder drücken Sie `c`. Schon ist der Pfad `>arc` und wie vielleicht nicht voraussehbar auch der Pfad `>unarc` verschwunden. Beim Ausschneiden werden aus rein logischen Gründen auch die gesamten Unterpfade des Laufwerks oder des Pfades ausgeschnitten. Diese Daten befinden sich nun in einem unsichtbaren Zwischenspeicher, der mit `Block/Anfügen` und `Block/Unter-Anfügen` an eine andere Stelle im *Listenfenster* wieder angefügt werden kann.
+Klicken Sie `>arc` an, und gehen auf die Blockfunktion `Ausschneiden` rechts unten, oder drÃ¼cken Sie `c`. Schon ist der Pfad `>arc` und wie vielleicht nicht voraussehbar auch der Pfad `>unarc` verschwunden. Beim Ausschneiden werden aus rein logischen GrÃ¼nden auch die gesamten Unterpfade des Laufwerks oder des Pfades ausgeschnitten. Diese Daten befinden sich nun in einem unsichtbaren Zwischenspeicher, der mit `Block/AnfÃ¼gen` und `Block/Unter-AnfÃ¼gen` an eine andere Stelle im *Listenfenster* wieder angefÃ¼gt werden kann.
 
-Klicken Sie nun auf `GLOBAL:`, da wir Pfade an die *globalen Einstellungen* anfügen wollen, und dann auf `Block/Anfügen`. Folgendes Bild sollte sich ergeben:
+Klicken Sie nun auf `GLOBAL:`, da wir Pfade an die *globalen Einstellungen* anfÃ¼gen wollen, und dann auf `Block/AnfÃ¼gen`. Folgendes Bild sollte sich ergeben:
 
 	
 	GLOBAL:        (dunkel oder normal)
@@ -176,9 +178,9 @@ Klicken Sie nun auf `GLOBAL:`, da wir Pfade an die *globalen Einstellungen* anfü
 	RAM: -> RAP:   (dunkel oder normal)
 	
 
-Falls nun in Zukunft noch mehrere Laufwerke angefügt werden (dies geschieht zum Beispiel mit einem Klick auf `RAM:  -> RAP:` und `Anfügen/Laufwerk`), werden wie die *globalen Laufwerkseinstellungen* (Doppelklick auf `GLOBAL:`) für jedes Laufwerk immer die *globalen Pfadeinstellungen* *vererbt*.
+Falls nun in Zukunft noch mehrere Laufwerke angefÃ¼gt werden (dies geschieht zum Beispiel mit einem Klick auf `RAM:  -> RAP:` und `AnfÃ¼gen/Laufwerk`), werden wie die *globalen Laufwerkseinstellungen* (Doppelklick auf `GLOBAL:`) fÃ¼r jedes Laufwerk immer die *globalen Pfadeinstellungen* *vererbt*.
 
-Die vererbten Parameter können durch die Angabe neuer Parameter in den *Laufwerkseinstellungen* und *Pfadeinstellungen* geändert werden. Die *Vererbung* wird dann aber in die weiter unteren liegenden Ebenen übertragen. Ein kleines Beispiel mit dem Packer:
+Die vererbten Parameter kÃ¶nnen durch die Angabe neuer Parameter in den *Laufwerkseinstellungen* und *Pfadeinstellungen* geÃ¤ndert werden. Die *Vererbung* wird dann aber in die weiter unteren liegenden Ebenen Ã¼bertragen. Ein kleines Beispiel mit dem Packer:
 
 	
 	GLOBAL:        (dunkel oder normal) (Packer: scn1)
@@ -187,7 +189,7 @@ Die vererbten Parameter können durch die Angabe neuer Parameter in den *Laufwerk
 	    >verz2     (dunkel oder normal) (Packer nicht gesetzt)
 	
 
-Global ist die oberste Ebene in der der Packer "scn1" gesetzt wurde. In der *Laufwerkszuweisung* eine Zeile darunter wird kein Packer gesetzt, also der Packer aus einer Ebene drüber verwendet (scn1). Das Verzeichnis 1 unterbricht diese Vererbung, und setzt für sich und für das Verzeichnis 2, das ja eine Ebene unter Verzeichnis 1 liegt, einen anderen Packer (scnx). Folgende Parameter sind also nun für die einzelnen Einstellungen gültig:
+Global ist die oberste Ebene in der der Packer "scn1" gesetzt wurde. In der *Laufwerkszuweisung* eine Zeile darunter wird kein Packer gesetzt, also der Packer aus einer Ebene drÃ¼ber verwendet (scn1). Das Verzeichnis 1 unterbricht diese Vererbung, und setzt fÃ¼r sich und fÃ¼r das Verzeichnis 2, das ja eine Ebene unter Verzeichnis 1 liegt, einen anderen Packer (scnx). Folgende Parameter sind also nun fÃ¼r die einzelnen Einstellungen gÃ¼ltig:
 
 	
 	GLOBAL:        (dunkel oder normal) (Packer: scn1)
@@ -196,20 +198,20 @@ Global ist die oberste Ebene in der der Packer "scn1" gesetzt wurde. In der *Lau
 	    >verz2     (dunkel oder normal) (Packer: scnx / wurde vererbt)
 	
 
-Diese Beispiele sollen einigermaßen die *Vererbungslogik* verdeutlichen. Natürlich richten sich auch alle anderen einstellbaren Parameter nach diesem System.
+Diese Beispiele sollen einigermaÃŸen die *Vererbungslogik* verdeutlichen. NatÃ¼rlich richten sich auch alle anderen einstellbaren Parameter nach diesem System.
 
 
 
 
 ## 2.4 Aktualisierung 
 
-Falls nun alle gewünschten Parameter im Konfigurationsprogramm eingestellt wurden, ist der Schritt vor dem Abspeichern der Konfiguration noch die *Aktualisierung*. Je nach dem, was momentan gerade in der *Listenanzeige* im *Basisfenster* ausgewählt ist, können Unterverzeichnisse oder gesamte Laufwerke aktualisiert werden. In der Aktualisierung werden alle Daten auf den neusten Stand gebracht. Wenn zum Beispiel in irgendeinem Verzeichnis der Packer oder das Passwort geändert wurde, erkennt die Aktualisierung das vollkommen automatisch und packt oder verschlüsselt die Daten neu.
+Falls nun alle gewÃ¼nschten Parameter im Konfigurationsprogramm eingestellt wurden, ist der Schritt vor dem Abspeichern der Konfiguration noch die *Aktualisierung*. Je nach dem, was momentan gerade in der *Listenanzeige* im *Basisfenster* ausgewÃ¤hlt ist, kÃ¶nnen Unterverzeichnisse oder gesamte Laufwerke aktualisiert werden. In der Aktualisierung werden alle Daten auf den neusten Stand gebracht. Wenn zum Beispiel in irgendeinem Verzeichnis der Packer oder das Passwort geÃ¤ndert wurde, erkennt die Aktualisierung das vollkommen automatisch und packt oder verschlÃ¼sselt die Daten neu.
 
-Da wie schon vorher berichtet die Verzeichnisstruktur im Konfigurationsprogramm nicht mit der aktuell auf dem Datenträger vorhandenen Struktur gleich sein muß, kann beim Anklicken auf `Aktualisieren` ein Hinweisfenster erscheinen, das Sie bittet, doch ein übergeordnetes Verzeichnis zu aktualisieren.
+Da wie schon vorher berichtet die Verzeichnisstruktur im Konfigurationsprogramm nicht mit der aktuell auf dem DatentrÃ¤ger vorhandenen Struktur gleich sein muÃŸ, kann beim Anklicken auf `Aktualisieren` ein Hinweisfenster erscheinen, das Sie bittet, doch ein Ã¼bergeordnetes Verzeichnis zu aktualisieren.
 
-Falls das *Aktualisieren-Fenster* erscheint, kann mit Hilfe des `Start` Knopfes die Aktualisierung begonnen werden. In der darüber liegenden Anzeige werden die Dateien angezeigt, die aktualisiert werden. Mit Hilfe von `Alles anzeigen` können auch die Dateien angezeigt werden, die zwar gefunden wurden, aber nicht bearbeitet werden.
+Falls das *Aktualisieren-Fenster* erscheint, kann mit Hilfe des `Start` Knopfes die Aktualisierung begonnen werden. In der darÃ¼ber liegenden Anzeige werden die Dateien angezeigt, die aktualisiert werden. Mit Hilfe von `Alles anzeigen` kÃ¶nnen auch die Dateien angezeigt werden, die zwar gefunden wurden, aber nicht bearbeitet werden.
 
-Beim Start wechselt der `Start` Knopf in ein `Pause` Knopf, der bei Betätigung die Aktualisierung unterbricht und sich in einen `Weiter` Knopf verwandelt. Nach Druck auf `Weiter` wird die Aktualisierung fortgesetzt.
+Beim Start wechselt der `Start` Knopf in ein `Pause` Knopf, der bei BetÃ¤tigung die Aktualisierung unterbricht und sich in einen `Weiter` Knopf verwandelt. Nach Druck auf `Weiter` wird die Aktualisierung fortgesetzt.
 
 Die verschiedenen Dateien werden je nach Bearbeitungsmodus in folgenden Farben dargestellt:
 
@@ -221,98 +223,98 @@ Datei Include/nicht aktualisiert	keine Anzeige	dunkel
 
 Die Aktualisierung kann jederzeit mit `Abbruch` beendet werden.
 
-Bitte beachten Sie, daß vor der Aktualisierung noch genügend *Speicherplatz* vorhanden ist. Wenn nicht genügend Speicher vorhanden ist, kann es vorkommen, daß die Daten zum Beispiel nicht komprimiert werden!
+Bitte beachten Sie, daÃŸ vor der Aktualisierung noch genÃ¼gend *Speicherplatz* vorhanden ist. Wenn nicht genÃ¼gend Speicher vorhanden ist, kann es vorkommen, daÃŸ die Daten zum Beispiel nicht komprimiert werden!
 
 
 
 
 ## 2.5 Packer 
 
-In in jeder Art der Einstellungsfenster (*globale Laufwerkseinstellungen*, *Laufwerkseinstellungen* und *Pfadeinstellungen*) ist die Vergabe eines Packers möglich. Vererbt werden die Einstellungen des Übergeordneten Eintrages dann, wenn der *Vererbungsknopf* rechts oben über der *Listenanzeige* keine Verbindungen zwischen den drei Rechtecken aufweist, und die Listenanzeige nicht in Geisterschrift angezeigt wird (überzogen mit einem schwarzem Pixel-Muster).
+In in jeder Art der Einstellungsfenster (*globale Laufwerkseinstellungen*, *Laufwerkseinstellungen* und *Pfadeinstellungen*) ist die Vergabe eines Packers mÃ¶glich. Vererbt werden die Einstellungen des Ãœbergeordneten Eintrages dann, wenn der *Vererbungsknopf* rechts oben Ã¼ber der *Listenanzeige* keine Verbindungen zwischen den drei Rechtecken aufweist, und die Listenanzeige nicht in Geisterschrift angezeigt wird (Ã¼berzogen mit einem schwarzem Pixel-Muster).
 
-Die Anzahl und das Vorhandensein der Packer kann variieren. Es werden die *RAP!-Packer* anerkannt die sich auf Ihrem *Bootmedium* im Verzeichnis `Libs:pack` befinden. Momentan nur "scn1" und "runl". Mit Hilfe der PD-Veröffentlichung des *XPK-Standards* können weitere Packer eingebunden werden, die sich dann im `Libs:compressors` Verzeichnis befinden. Die Anzeige der *XPK-Packer* geschieht automatisch. Die *RAP!-packer* werden in kleiner Schrift dargestellt, die *XPK-Packer* in Großschrift. Da sich noch in der alten Version der *XPK-Library* ein Fehler befand, der die Verwendung für RAP! ausschloß, ist die Verwendung von *XPK-Packer* erst ab der `xpkmaster.library` Version 2 möglich.
+Die Anzahl und das Vorhandensein der Packer kann variieren. Es werden die *RAP!-Packer* anerkannt die sich auf Ihrem *Bootmedium* im Verzeichnis `Libs:pack` befinden. Momentan nur "scn1" und "runl". Mit Hilfe der PD-VerÃ¶ffentlichung des *XPK-Standards* kÃ¶nnen weitere Packer eingebunden werden, die sich dann im `Libs:compressors` Verzeichnis befinden. Die Anzeige der *XPK-Packer* geschieht automatisch. Die *RAP!-packer* werden in kleiner Schrift dargestellt, die *XPK-Packer* in GroÃŸschrift. Da sich noch in der alten Version der *XPK-Library* ein Fehler befand, der die Verwendung fÃ¼r RAP! ausschloÃŸ, ist die Verwendung von *XPK-Packer* erst ab der `xpkmaster.library` Version 2 mÃ¶glich.
 
-Die Ausschaltung des Packers geschieht durch das einfache Löschen der 4 Packer-Buchstaben unter der Listenanzeige liegendem Eingabefeld. In diesem Fall muß die Vererbung ausgeschaltet sein.
+Die Ausschaltung des Packers geschieht durch das einfache LÃ¶schen der 4 Packer-Buchstaben unter der Listenanzeige liegendem Eingabefeld. In diesem Fall muÃŸ die Vererbung ausgeschaltet sein.
 
 
 
 
 ## 2.6 Crypter, Passwort 
 
-Auch wie die oben geschilderte Packer-Einstellung kann in jeder Einstellungsart ein Crypter sowie ein Passwort eingestellt werden: Mit Hilfe des Passwortes können Daten vor fremden Zugriff geschützt werden. Auch hier gelten die üblichen *Vererbungsregeln*, die schon ausreichend erklärt wurden.
+Auch wie die oben geschilderte Packer-Einstellung kann in jeder Einstellungsart ein Crypter sowie ein Passwort eingestellt werden: Mit Hilfe des Passwortes kÃ¶nnen Daten vor fremden Zugriff geschÃ¼tzt werden. Auch hier gelten die Ã¼blichen *Vererbungsregeln*, die schon ausreichend erklÃ¤rt wurden.
 
-Bis jetzt werden nur die *RAP!-Crypter* unterstützt. Einer befindet sich nach der erfolgreichen Installation im Verzeichnis `Libs:crypt`, der den Namen "fast" trägt. Wie der Name schon sagt, ist er relativ schnell, und sollte keine Zeitverzögerungen aufweisen.
+Bis jetzt werden nur die *RAP!-Crypter* unterstÃ¼tzt. Einer befindet sich nach der erfolgreichen Installation im Verzeichnis `Libs:crypt`, der den Namen "fast" trÃ¤gt. Wie der Name schon sagt, ist er relativ schnell, und sollte keine ZeitverzÃ¶gerungen aufweisen.
 
-Die Einstellung geschieht genauso wie bei den Packer. Das Löschen auch durch das Löschen der 4 Buchstaben im Eingabefeld unter der Listenanzeige. Zusätzlich zu dieser Einstellung benötigen wir nun auch ein Passwort. Dieses Passwort wird mit Hilfe des Knopfes `Neu` verändert. Falls ein Crypter gesetzt wurde, erscheint nun ein Fenster, worin das Passwort eingegeben werden kann. Falls zuvor ein Passwort schon gesetzt war, wird es auch in diesem Fenster abgefragt. Nach erfolgreicher Eingabe wird das Passwort einmalig links neben dem `Neu` in der Anzeige dargestellt. Bitte merken Sie sich nun das Passwort, denn es wird nie wieder erscheinen. Aus Sicherheitsgründen wird das Passwort nicht gespeichert, sondern nur ein Prüfsumme, aus der lediglich die Richtigkeit eines Passwortes hergeleitet wird, nicht aber der genaue Name.
+Die Einstellung geschieht genauso wie bei den Packer. Das LÃ¶schen auch durch das LÃ¶schen der 4 Buchstaben im Eingabefeld unter der Listenanzeige. ZusÃ¤tzlich zu dieser Einstellung benÃ¶tigen wir nun auch ein Passwort. Dieses Passwort wird mit Hilfe des Knopfes `Neu` verÃ¤ndert. Falls ein Crypter gesetzt wurde, erscheint nun ein Fenster, worin das Passwort eingegeben werden kann. Falls zuvor ein Passwort schon gesetzt war, wird es auch in diesem Fenster abgefragt. Nach erfolgreicher Eingabe wird das Passwort einmalig links neben dem `Neu` in der Anzeige dargestellt. Bitte merken Sie sich nun das Passwort, denn es wird nie wieder erscheinen. Aus SicherheitsgrÃ¼nden wird das Passwort nicht gespeichert, sondern nur ein PrÃ¼fsumme, aus der lediglich die Richtigkeit eines Passwortes hergeleitet wird, nicht aber der genaue Name.
 
-Es ist nicht wieder möglich das Passwort herauszufinden. Bitte achten Sie genau darauf, welche Zeichen Sie eingeben.
+Es ist nicht wieder mÃ¶glich das Passwort herauszufinden. Bitte achten Sie genau darauf, welche Zeichen Sie eingeben.
 
-Im späteren Betrieb wird nach jedem Neustart des Rechners bei einem Zugriff auf eine kodierte Datei ein Passwort Fenster erscheinen, indem einfach das Passwort eingegeben wird. Bei drei Falscheingaben bricht der FileHandler von RAP! die Verarbeitung der Datei mit einem *read-protected* Fehler ab. Ist das Passwort richtig eingegeben worden, wird es bis zum Neustart intern gespeichert und nicht wieder abgefragt.
-
-
-
-
-## 2.7 ChunkGröße, OvlGröße 
-
-Diese zwei Parameter, die auch in allen Einstellungsarten vorkommen, sollten für den Normalgebrauch nicht verändert werden. Also überall auf vererbt gesetzt sein.
-
-Die ChunkGröße gibt die Anzahl der Bytes an, wie die Dateien beim Speichern oder Lesen zerstückelt werden. Zerstückelt müssen sie deshalb werden, weil sonst bei langen Dateien zu viel RAM-Speicher verbraucht werden würde um die Daten zu packen. Und nicht zuletzt deshalb, weil das *Amiga-FileSystem* einen Teilzugriff auf die Daten erlaubt. Desto kleiner dieser Wert ist, desto schlechter ist die *Packrate*, aber desto schneller kann auch per Teilzugriffen auf die Daten zugegriffen werden. Nützlich ist eine kleine ChunkGröße nur bei Dateien, bei denen nur bestimmte Daten *herausgefischt* werden (zum Beispiel bei Datenbankdateien). Der voreingestellte Wert ist hier 16384 oder hexadezimal $4000.
-
-Die OvlGröße gibt die Länge ein bis zwei interner Speicherbuffer an, die dann verwendet werden, wenn Zeichen innerhalb einer Datei eingefügt werden oder herausfallen. Haben Sie Dateien wie zum Beispiel wieder bei Datenbanken, die sich öfters selbst modifizieren, kann durch eine Variierung dieses Wertes eine Geschwindigkeitssteigerung erreicht werden. Generell ist aber aus Geschwindigkeitsgründen nicht zu empfehlen Dateien zu packen, die sehr oft stückchenweise verändert werden.
-
-Die *Vererbungsregeln* gelten natürlich auch bei diesen Einstellungen.
+Im spÃ¤teren Betrieb wird nach jedem Neustart des Rechners bei einem Zugriff auf eine kodierte Datei ein Passwort Fenster erscheinen, indem einfach das Passwort eingegeben wird. Bei drei Falscheingaben bricht der FileHandler von RAP! die Verarbeitung der Datei mit einem *read-protected* Fehler ab. Ist das Passwort richtig eingegeben worden, wird es bis zum Neustart intern gespeichert und nicht wieder abgefragt.
 
 
 
 
-## 2.8 VolPräfix, VolSuffix 
+## 2.7 ChunkGrÃ¶ÃŸe, OvlGrÃ¶ÃŸe 
 
-Bei der Verwendung von *entfernbaren Datenträgern* (zum Beispiel Diskette) erscheint auf der Workbench beim Einlegen der Diskette ein Icon mit dem Namen des Datenträgers. Da bis jetzt noch technisch bedingt bei einem installierten *RAP-Laufwerk* auf eines der entfernbaren Laufwerke ein zweites Icon erscheint, wurden die Parameter VolPräfix und VolSuffix eingefügt.
+Diese zwei Parameter, die auch in allen Einstellungsarten vorkommen, sollten fÃ¼r den Normalgebrauch nicht verÃ¤ndert werden. Also Ã¼berall auf vererbt gesetzt sein.
 
-VolPräfix gibt eine Zeichenkette an, die vor dem Namen des Datenträgers erscheinen soll. Voreingestellt ist hier ein "_".
+Die ChunkGrÃ¶ÃŸe gibt die Anzahl der Bytes an, wie die Dateien beim Speichern oder Lesen zerstÃ¼ckelt werden. ZerstÃ¼ckelt mÃ¼ssen sie deshalb werden, weil sonst bei langen Dateien zu viel RAM-Speicher verbraucht werden wÃ¼rde um die Daten zu packen. Und nicht zuletzt deshalb, weil das *Amiga-FileSystem* einen Teilzugriff auf die Daten erlaubt. Desto kleiner dieser Wert ist, desto schlechter ist die *Packrate*, aber desto schneller kann auch per Teilzugriffen auf die Daten zugegriffen werden. NÃ¼tzlich ist eine kleine ChunkGrÃ¶ÃŸe nur bei Dateien, bei denen nur bestimmte Daten *herausgefischt* werden (zum Beispiel bei Datenbankdateien). Der voreingestellte Wert ist hier 16384 oder hexadezimal $4000.
 
-VolSuffix gibt die Zeichenkette an, die nach dem Namen des Datenträgers erscheinen soll. Voreingestellt ist hier ein "".
+Die OvlGrÃ¶ÃŸe gibt die LÃ¤nge ein bis zwei interner Speicherbuffer an, die dann verwendet werden, wenn Zeichen innerhalb einer Datei eingefÃ¼gt werden oder herausfallen. Haben Sie Dateien wie zum Beispiel wieder bei Datenbanken, die sich Ã¶fters selbst modifizieren, kann durch eine Variierung dieses Wertes eine Geschwindigkeitssteigerung erreicht werden. Generell ist aber aus GeschwindigkeitsgrÃ¼nden nicht zu empfehlen Dateien zu packen, die sehr oft stÃ¼ckchenweise verÃ¤ndert werden.
+
+Die *Vererbungsregeln* gelten natÃ¼rlich auch bei diesen Einstellungen.
+
+
+
+
+## 2.8 VolPrÃ¤fix, VolSuffix 
+
+Bei der Verwendung von *entfernbaren DatentrÃ¤gern* (zum Beispiel Diskette) erscheint auf der Workbench beim Einlegen der Diskette ein Icon mit dem Namen des DatentrÃ¤gers. Da bis jetzt noch technisch bedingt bei einem installierten *RAP-Laufwerk* auf eines der entfernbaren Laufwerke ein zweites Icon erscheint, wurden die Parameter VolPrÃ¤fix und VolSuffix eingefÃ¼gt.
+
+VolPrÃ¤fix gibt eine Zeichenkette an, die vor dem Namen des DatentrÃ¤gers erscheinen soll. Voreingestellt ist hier ein "_".
+
+VolSuffix gibt die Zeichenkette an, die nach dem Namen des DatentrÃ¤gers erscheinen soll. Voreingestellt ist hier ein "".
 
 
 
 
 ## 2.9 HandlerDatei, HandlerStack 
 
-Diese zwei Parameter sind für die *zukünftige Kompatibilität* integriert worden. Diese Werte sollten nur im Notfall verändert oder gesetzt werden.
+Diese zwei Parameter sind fÃ¼r die *zukÃ¼nftige KompatibilitÃ¤t* integriert worden. Diese Werte sollten nur im Notfall verÃ¤ndert oder gesetzt werden.
 
 HandlerDatei gibt den kompletten Pfad und Dateiname des *RAP!-Handlers* an. Voreingestellt ist hier `L:rap-handler`.
 
-Durch die ständige Weiterentwicklung des Betriebssystems muß auch die Stack-Größe des Handlers variabel sein. Voreingestellt ist hier der Wert 3072.
+Durch die stÃ¤ndige Weiterentwicklung des Betriebssystems muÃŸ auch die Stack-GrÃ¶ÃŸe des Handlers variabel sein. Voreingestellt ist hier der Wert 3072.
 
 
 
 
 # 3 RAP! bei der Arbeit 
 
-Im täglichen Umgang mit RAP! ergeben sich manchmal kleinere Probleme, die im folgenden Kapitel schon im voraus abgedeckt werden sollten.
+Im tÃ¤glichen Umgang mit RAP! ergeben sich manchmal kleinere Probleme, die im folgenden Kapitel schon im voraus abgedeckt werden sollten.
 
 
 
 
 ## 3.1 Was sollte man nicht komprimieren 
 
-Wie schon in den vorherigen Kapiteln beschrieben, gibt es Fälle, wo man bestimmte Dateien nicht Komprimierung sollte. Die Art der Dateien sowie die Gründe für kleinere auftretende Probleme werden hier beschrieben.
+Wie schon in den vorherigen Kapiteln beschrieben, gibt es FÃ¤lle, wo man bestimmte Dateien nicht Komprimierung sollte. Die Art der Dateien sowie die GrÃ¼nde fÃ¼r kleinere auftretende Probleme werden hier beschrieben.
 
 ### 3.1.1 Datenbankdateien 
 
-Wenn möglich sollten keine *Datenbankdateien* komprimiert werden, mit denen sehr oft gearbeitet wird. Nach unseren bisherigen Experimenten ergeben sich je nach Datenbanksystem enorme *Geschwindigkeitsverzögerungen*, die zwar durch die Variierung von ChunkGröße und OvlGröße verkleinert werden kann, aber dennoch im Vergleich zur ungepackten Verarbeitung zu groß ist.
+Wenn mÃ¶glich sollten keine *Datenbankdateien* komprimiert werden, mit denen sehr oft gearbeitet wird. Nach unseren bisherigen Experimenten ergeben sich je nach Datenbanksystem enorme *GeschwindigkeitsverzÃ¶gerungen*, die zwar durch die Variierung von ChunkGrÃ¶ÃŸe und OvlGrÃ¶ÃŸe verkleinert werden kann, aber dennoch im Vergleich zur ungepackten Verarbeitung zu groÃŸ ist.
 
 ### 3.1.2 Disk-Dateien 
 
-Dasselbe Problem gilt für Dateien, die einen Datenträger mit parallelen Zugriff simulieren. Auch hier gibt es die oben beschriebenen Verzögerungen. Beachten Sie bitte, daß diese Verzögerungen nicht durch die Zeit zum Komprimieren oder Entkomprimieren verbraucht wird. RAP! besitzt ein internes System, um Daten im Falle einer inneren Verkürzung oder Verlängerung eines Packabschnittes zu verschieben.
+Dasselbe Problem gilt fÃ¼r Dateien, die einen DatentrÃ¤ger mit parallelen Zugriff simulieren. Auch hier gibt es die oben beschriebenen VerzÃ¶gerungen. Beachten Sie bitte, daÃŸ diese VerzÃ¶gerungen nicht durch die Zeit zum Komprimieren oder Entkomprimieren verbraucht wird. RAP! besitzt ein internes System, um Daten im Falle einer inneren VerkÃ¼rzung oder VerlÃ¤ngerung eines Packabschnittes zu verschieben.
 
 ### 3.1.3 komprimierte Dateien 
 
-Vermeiden Sie das Komprimieren von schon komprimierten Dateien. Das kostet nur Zeit, und die Datei wird möglicherweise sogar länger.
+Vermeiden Sie das Komprimieren von schon komprimierten Dateien. Das kostet nur Zeit, und die Datei wird mÃ¶glicherweise sogar lÃ¤nger.
 
 ### 3.1.4 Systemdateien 
 
-Falls zum Beispiel eine Workbench komprimiert werden soll, ist es wichtig zu wissen, daß alle Verzeichnisse, die Daten enthalten könnten die das *RAP!-system* sowie die Workbench beim Initialisieren benötigt, natürlich nicht komprimiert werden dürfen. Es ist sowieso nie sicher außer den Verzeichnissen "Utilities", "Tools" und "Prefs" eine Workbench zu komprimieren, da aus den anderen Verzeichnissen schon beim Start Daten benötigt werden.
+Falls zum Beispiel eine Workbench komprimiert werden soll, ist es wichtig zu wissen, daÃŸ alle Verzeichnisse, die Daten enthalten kÃ¶nnten die das *RAP!-system* sowie die Workbench beim Initialisieren benÃ¶tigt, natÃ¼rlich nicht komprimiert werden dÃ¼rfen. Es ist sowieso nie sicher auÃŸer den Verzeichnissen "Utilities", "Tools" und "Prefs" eine Workbench zu komprimieren, da aus den anderen Verzeichnissen schon beim Start Daten benÃ¶tigt werden.
 
 ### 3.1.5 Wichtige Daten 
 
@@ -323,29 +325,29 @@ RAP! hat zwar schon eine monatelange Testphase hinter sich gebracht, aber es kan
 
 ## 3.2 komprimierte Dateien verarbeiten. 
 
-Da auch der Zugriff auf das untere Laufwerk noch erlaubt wird, also bei der Laufwerkszuweisung von zum Beispiel "DF0:  -> RAP:" ein Zugriff auf die komprimierten Daten des Laufwerkes "RAP:" über "DF0:" erlaubt sind, können auch die gepackten Daten verarbeitet werden. Besonders im Bereich der *DFÜ* oder beim fileweisen Kopieren von einem *RAP-Laufwerk* auf ein anderes hat dieser Zugriff Vorteile.
+Da auch der Zugriff auf das untere Laufwerk noch erlaubt wird, also bei der Laufwerkszuweisung von zum Beispiel "DF0:  -> RAP:" ein Zugriff auf die komprimierten Daten des Laufwerkes "RAP:" Ã¼ber "DF0:" erlaubt sind, kÃ¶nnen auch die gepackten Daten verarbeitet werden. Besonders im Bereich der *DFÃœ* oder beim fileweisen Kopieren von einem *RAP-Laufwerk* auf ein anderes hat dieser Zugriff Vorteile.
 
-Beachten Sie aber immer, daß eine RAP!-komprimierte Datei nicht auf ein *RAP-Laufwerk* kopiert werden darf. Sind zum Beispiel zwei Laufwerke "DF0:", "DF1:" sowie die dazugehörigen RAP-Laufwerke "RAP0:" und "RAP1:" angemeldet, sollten niemals komprimierte Dateien von "DF0:" auf "RAP1:" kopiert werden, da sie dadurch nochmals komprimiert werden.
+Beachten Sie aber immer, daÃŸ eine RAP!-komprimierte Datei nicht auf ein *RAP-Laufwerk* kopiert werden darf. Sind zum Beispiel zwei Laufwerke "DF0:", "DF1:" sowie die dazugehÃ¶rigen RAP-Laufwerke "RAP0:" und "RAP1:" angemeldet, sollten niemals komprimierte Dateien von "DF0:" auf "RAP1:" kopiert werden, da sie dadurch nochmals komprimiert werden.
 
-Um die doppelt komprimierte Datei wieder in das ursprüngliche Format zurückzubekommen, muß sie wieder von "RAP1:" auf "DF0:" zurückkopiert werden. Dann kann wieder wie gewohnt auf "RAP0:" zugegriffen werden.
-
-
+Um die doppelt komprimierte Datei wieder in das ursprÃ¼ngliche Format zurÃ¼ckzubekommen, muÃŸ sie wieder von "RAP1:" auf "DF0:" zurÃ¼ckkopiert werden. Dann kann wieder wie gewohnt auf "RAP0:" zugegriffen werden.
 
 
-## 3.3 Installationen übertragen 
 
-Die einfachste Möglichkeit eine *Programminstallation* auf ein *RAP-Laufwerk* zu übertragen, ist die erneute Installation.
 
-Ist dies nicht möglich, sollte nach der Aktualisierung der dazugehörigen Dateien, alle eventuellen *Assign-Befehle*, die sich in der *User-Startup* oder *Startup-Sequence* befinden und sich auf die Installation des Programms beziehen, so geändert werden, daß sie sich nun auf das *RAP-Laufwerk* beziehen.
+## 3.3 Installationen Ã¼bertragen 
+
+Die einfachste MÃ¶glichkeit eine *Programminstallation* auf ein *RAP-Laufwerk* zu Ã¼bertragen, ist die erneute Installation.
+
+Ist dies nicht mÃ¶glich, sollte nach der Aktualisierung der dazugehÃ¶rigen Dateien, alle eventuellen *Assign-Befehle*, die sich in der *User-Startup* oder *Startup-Sequence* befinden und sich auf die Installation des Programms beziehen, so geÃ¤ndert werden, daÃŸ sie sich nun auf das *RAP-Laufwerk* beziehen.
 
 
 
 
 ## 3.4 Workbench-Benutzung 
 
-Ab der Kickstart 2 ist es möglich, Programme auf die Workbench herauszulegen. Dies ist momentan noch nicht mit *RAP-Laufwerken* möglich.
+Ab der Kickstart 2 ist es mÃ¶glich, Programme auf die Workbench herauszulegen. Dies ist momentan noch nicht mit *RAP-Laufwerken* mÃ¶glich.
 
-Bitte beachten Sie auch, daß durch das Umbenennen von Dateien, die sich auf einem RAP-Laufwerk befinden, nicht bearbeitet werden, da das Umbenennen keinen Kopiervorgang startet, sondern nur Blockzeiger korrigiert. Verwenden Sie hierfür dann anschließend die Aktualisierung.
+Bitte beachten Sie auch, daÃŸ durch das Umbenennen von Dateien, die sich auf einem RAP-Laufwerk befinden, nicht bearbeitet werden, da das Umbenennen keinen Kopiervorgang startet, sondern nur Blockzeiger korrigiert. Verwenden Sie hierfÃ¼r dann anschlieÃŸend die Aktualisierung.
 
 
 
@@ -376,10 +378,10 @@ Bitte beachten Sie auch, daß durch das Umbenennen von Dateien, die sich auf eine
 
 Wenn in den globalen Laufwerkseinstellungen die Parameter nicht gesetzt werden (im *Vererbungsknopf* die 3 Rechtecke verbunden sind), sind folgende Werte voreingestellt:
 
-VolPräfix:	"_"  
+VolPrÃ¤fix:	"_"  
 VolSuffix:	""  
-ChunkGröße:	16384, hexadezimal $4000  
-OvlGröße:	8192, hexadezimal $2000  
+ChunkGrÃ¶ÃŸe:	16384, hexadezimal $4000  
+OvlGrÃ¶ÃŸe:	8192, hexadezimal $2000  
 HandlerStack:	3072, hexadezimal  $c00  
 HandlerDatei:	`l:rap-handler`
 
@@ -390,9 +392,9 @@ Packer und Crypter sind ausgeschaltet.
 
 ## Anhang B, Aufbau der *Konfigurationsdatei* 
 
-Nach Einstellung der nötigen Parameter wird in RAP!-Prefs beim Speichern eine Datei namens `RAP.Config` je nach Vorhandensein in das "ENVARC:" oder "S:" Verzeichnis kopiert. Diese Datei besteht nicht wie üblich aus einer Binärdatei, sondern beinhaltet die aktuellen Einstellung in Form einer einfachen ASCII *Sprachanweisung*. Diese Informationen können mit Hilfe eines handelsüblichen Editors oder mit dem bei der Workbench beigelegten "ED", verändert werden. Näheres finden Sie hierzu in Ihrem *DOS-Handbuch*.
+Nach Einstellung der nÃ¶tigen Parameter wird in RAP!-Prefs beim Speichern eine Datei namens `RAP.Config` je nach Vorhandensein in das "ENVARC:" oder "S:" Verzeichnis kopiert. Diese Datei besteht nicht wie Ã¼blich aus einer BinÃ¤rdatei, sondern beinhaltet die aktuellen Einstellung in Form einer einfachen ASCII *Sprachanweisung*. Diese Informationen kÃ¶nnen mit Hilfe eines handelsÃ¼blichen Editors oder mit dem bei der Workbench beigelegten "ED", verÃ¤ndert werden. NÃ¤heres finden Sie hierzu in Ihrem *DOS-Handbuch*.
 
-Folgende *Schlüsselwörter* werden erkannt:
+Folgende *SchlÃ¼sselwÃ¶rter* werden erkannt:
 
 volprefix &lt;Zeichenkette>;
 
@@ -400,15 +402,15 @@ volprefix &lt;Zeichenkette>;
 
 volsuffix &lt;Zeichenkette>;
 
--  Die Zeichenkette, die angefügt wird. 
+-  Die Zeichenkette, die angefÃ¼gt wird. 
 
 crypter &lt;Wert1>,&lt;Wert2>;
 
--  Stellt den Crypter ein. Wert1 ist der Cryptername, Wert2 der Crypterschlüssel des verwendeten Passwortes. Zum Ausschalten des Crypters geben Sie bitte `crypter '';` ein. Die Berechnung der *Crypterschlüssels* geschieht über das mitgelieferte *RAP-GetKey* Programm, dem Sie den Packer sowie das Passwort übergeben. Um nun zum Beispiel den *Crypterschlüssel* des Passwortes "Test" zu berechnen, muß folgende Zeile im CLI oder in der Shell eingegeben werden:
+-  Stellt den Crypter ein. Wert1 ist der Cryptername, Wert2 der CrypterschlÃ¼ssel des verwendeten Passwortes. Zum Ausschalten des Crypters geben Sie bitte `crypter '';` ein. Die Berechnung der *CrypterschlÃ¼ssels* geschieht Ã¼ber das mitgelieferte *RAP-GetKey* Programm, dem Sie den Packer sowie das Passwort Ã¼bergeben. Um nun zum Beispiel den *CrypterschlÃ¼ssel* des Passwortes "Test" zu berechnen, muÃŸ folgende Zeile im CLI oder in der Shell eingegeben werden:
 
 	-  RAP-GetKey fast Test 
 
-- Das Ergebnis müßte 0x1D2AFE68 lauten. In der Konfigurationsdatei müßte dann die entsprechende Zeile folgendermaßen aussehen:
+- Das Ergebnis mÃ¼ÃŸte 0x1D2AFE68 lauten. In der Konfigurationsdatei mÃ¼ÃŸte dann die entsprechende Zeile folgendermaÃŸen aussehen:
 
 	-  crypter 'fast',0x1D2AFE68;  
 
@@ -426,27 +428,27 @@ stack &lt;Wert>;
 
 chunksize &lt;Wert>;
 
--  Setzt die ChunkGröße auf &lt;Wert> Bytes. 
+-  Setzt die ChunkGrÃ¶ÃŸe auf &lt;Wert> Bytes. 
 
 ovlsize &lt;Wert>;
 
--  Setzt die OvlGröße auf &lt;Wert> Bytes. 
+-  Setzt die OvlGrÃ¶ÃŸe auf &lt;Wert> Bytes. 
 
 drive &lt;Zeichenkette1>,&lt;Zeichenkette2>{}
 
--  Fügt ein Laufwerk an. Zeichenkette 1 gibt das *SYS-Laufwerk* an. Zeichenkette 2 das *RAP-Laufwerk*. Wenn weitere *individuelle Parameter* nur innerhalb dieses Laufwerks geändert werden sollen, müssen sie nach der Zeichenkette2 innerhalb den geschweiften Klammer eingefügt werden. Falls keine individuellen Parameter verwenden werden, werden die aktuellen, globalen Parameter vererbt. 
+-  FÃ¼gt ein Laufwerk an. Zeichenkette 1 gibt das *SYS-Laufwerk* an. Zeichenkette 2 das *RAP-Laufwerk*. Wenn weitere *individuelle Parameter* nur innerhalb dieses Laufwerks geÃ¤ndert werden sollen, mÃ¼ssen sie nach der Zeichenkette2 innerhalb den geschweiften Klammer eingefÃ¼gt werden. Falls keine individuellen Parameter verwenden werden, werden die aktuellen, globalen Parameter vererbt. 
 
 drive "ram:","rap:";
 
--  Fügt das Laufwerk "rap:" an. Übernimmt die Parameter aus dem globalen Bereich der *Konfigurationsdatei*. 
+-  FÃ¼gt das Laufwerk "rap:" an. Ãœbernimmt die Parameter aus dem globalen Bereich der *Konfigurationsdatei*. 
 
 include &lt;Zeichenkette>{}
 
--  Fügt ein Pfad an. Wie bei den *Laufwerkseinstellungen* können hier auch individuelle Parameter für diesen Pfad gesetzt werden. Auch Platzhalter sind hier möglich (siehe hierzu Anhang F). 
+-  FÃ¼gt ein Pfad an. Wie bei den *Laufwerkseinstellungen* kÃ¶nnen hier auch individuelle Parameter fÃ¼r diesen Pfad gesetzt werden. Auch Platzhalter sind hier mÃ¶glich (siehe hierzu Anhang F). 
 
 exclude &lt;Zeichenkette>{}
 
--  Fügt einen Pfad an, der nicht bearbeitet werden soll. Auch hier können individuelle Parameter für weitere Unterpfade gesetzt werden. Die eingegebene Zeichenkette kann auch wie im Anhang F beschrieben Platzhalter verwenden. 
+-  FÃ¼gt einen Pfad an, der nicht bearbeitet werden soll. Auch hier kÃ¶nnen individuelle Parameter fÃ¼r weitere Unterpfade gesetzt werden. Die eingegebene Zeichenkette kann auch wie im Anhang F beschrieben Platzhalter verwenden. 
 
 
 
@@ -465,15 +467,15 @@ Um das Ganze noch ein wenig zu verdeutlichen, folgendes Beispiel:
 	10 }
 	
 
-In Zeile 1 wird global der Packer "scn1" eingestellt. Das Laufwerk RAP wird nun wie in Zeile 2 für das Laufwerk "RAM" hergenommen. In Zeile 4 werden alle Verzeichnisse *excluded*, da wir nur bestimmte Verzeichnisse bearbeiten wollen.
+In Zeile 1 wird global der Packer "scn1" eingestellt. Das Laufwerk RAP wird nun wie in Zeile 2 fÃ¼r das Laufwerk "RAM" hergenommen. In Zeile 4 werden alle Verzeichnisse *excluded*, da wir nur bestimmte Verzeichnisse bearbeiten wollen.
 
-Nun wird in Zeile 5 das Verzeichnis1 wieder eingefügt, und da kein Packer exklusiv gesetzt wird, wird der weiter oben gesetzte "scn1" verwendet.
+Nun wird in Zeile 5 das Verzeichnis1 wieder eingefÃ¼gt, und da kein Packer exklusiv gesetzt wird, wird der weiter oben gesetzte "scn1" verwendet.
 
-Dann wird das Verzeichnis2 angefügt und mit dem Packer "runl" versehen. Alle Dateien, die nun in dieses Verzeichnis kopiert werden, werden mit dem Packer "runl" komprimiert.
+Dann wird das Verzeichnis2 angefÃ¼gt und mit dem Packer "runl" versehen. Alle Dateien, die nun in dieses Verzeichnis kopiert werden, werden mit dem Packer "runl" komprimiert.
 
 
 
-Die verschiedenen Werteingaben können folgendermaßen aussehen:
+Die verschiedenen Werteingaben kÃ¶nnen folgendermaÃŸen aussehen:
 
 Dezimal	12345  
 Hexadezimal	0xabcdef  
@@ -486,18 +488,18 @@ Beispiel:
 /\* Dies ist ein C Kommentar \*/  
 // Dies ist ein C++ Kommentar
 
-Bitte beachten Sie auch, daß das Konfigurationsprogramm die *Kommentare* beim Speichern nicht mehr zurückschreibt, und ggf. die komplette Formatierung ändert. Wenn die Konfigurationsdatei *per Hand* abgändert wird, sollte das Konfigurationsprogramm nur zum Aktualisieren verwendet werden.
+Bitte beachten Sie auch, daÃŸ das Konfigurationsprogramm die *Kommentare* beim Speichern nicht mehr zurÃ¼ckschreibt, und ggf. die komplette Formatierung Ã¤ndert. Wenn die Konfigurationsdatei *per Hand* abgÃ¤ndert wird, sollte das Konfigurationsprogramm nur zum Aktualisieren verwendet werden.
 
 
 
 
 ## Anhang C, Fehlermeldungen bei der Verarbeitung der Konfigurationsdatei 
 
-Beim Verarbeiten der Konfigurationsdatei durch RAP-Mount oder im Konfigurationsprogramm selber, können folgende Fehler auftreten:
+Beim Verarbeiten der Konfigurationsdatei durch RAP-Mount oder im Konfigurationsprogramm selber, kÃ¶nnen folgende Fehler auftreten:
 
 *Tokenizer Fehler*:
 
-T1: Nicht unterstütztes Zeichen
+T1: Nicht unterstÃ¼tztes Zeichen
 
 -  Dieses Zeichen wurde nicht erkannt. 
 
@@ -511,11 +513,11 @@ T3: Zeichenkette nicht abgeschlossen
 
 T4: Zeichenkette zu lang
 
--  Eine Zeichenkette ist länger als 1023 Zeichen. 
+-  Eine Zeichenkette ist lÃ¤nger als 1023 Zeichen. 
 
-T5: Schlüsselwort zu lang
+T5: SchlÃ¼sselwort zu lang
 
--  Ein Schlüsselwort ist länger als 1023 Zeichen. 
+-  Ein SchlÃ¼sselwort ist lÃ¤nger als 1023 Zeichen. 
 
 T6: Kommentar nicht abgeschlossen
 
@@ -525,11 +527,11 @@ T7: ASCII-Wert nicht abgeschlossen
 
 -  Der ASCII-Wert wurde nicht durch ein Hochkomma abgeschlossen. 
 
-T8: ASCII-Wert zu groß
+T8: ASCII-Wert zu groÃŸ
 
 -  Es wurden mehr als 4 Zeichen in einem ASCII-Wert eingegeben. 
 
-T9: Hex-Wert zu groß
+T9: Hex-Wert zu groÃŸ
 
 -  Es wurden mehr als 8 hexadezimale Zeichen eingegeben. 
 
@@ -547,9 +549,9 @@ P3: Wert erwartet
 
 -  Es wird ein Wert erwartet. 
 
-P4: Schlüsselwort erwartet
+P4: SchlÃ¼sselwort erwartet
 
--  Das angegebene Schlüsselwort wurde vom Tokenizer nicht erkannt oder ist nicht vorhanden. 
+-  Das angegebene SchlÃ¼sselwort wurde vom Tokenizer nicht erkannt oder ist nicht vorhanden. 
 
 P6: '}' erwartet
 
@@ -557,92 +559,92 @@ P6: '}' erwartet
 
 P7: ',' erwartet
 
--  Ein Komma wird hier erwartet. Kann zum Beispiel beim Vergessen des Crypterschlüssels vorkommen. 
+-  Ein Komma wird hier erwartet. Kann zum Beispiel beim Vergessen des CrypterschlÃ¼ssels vorkommen. 
 
 P8: '{' oder ';' erwartet
 
--  Entweder ein Block muß hier eingeleitet werden, oder ein Semikolon gesetzt werden. Tritt bei Befehlen wie "drive" auf. 
+-  Entweder ein Block muÃŸ hier eingeleitet werden, oder ein Semikolon gesetzt werden. Tritt bei Befehlen wie "drive" auf. 
 
-P9: VolPräfix und VolSuffix = ""
+P9: VolPrÃ¤fix und VolSuffix = ""
 
--  VolPräfix und VolSuffix sind beide = "". Dies darf nicht möglich sein, sonst würden beim Einlegen eines Datenträgers zwei Icons mit demselben Namen auf der Workbench erscheinen. 
+-  VolPrÃ¤fix und VolSuffix sind beide = "". Dies darf nicht mÃ¶glich sein, sonst wÃ¼rden beim Einlegen eines DatentrÃ¤gers zwei Icons mit demselben Namen auf der Workbench erscheinen. 
 
 P10: Laufwerk(sname) doppelt verwendet
 
--  Laufwerksnamen dürfen nicht doppelt verwendet werden! 
+-  Laufwerksnamen dÃ¼rfen nicht doppelt verwendet werden! 
 
 P11: Wert zu klein
 
--  Ein angegebener Wert unterschreitet die Minimalgröße. 
+-  Ein angegebener Wert unterschreitet die MinimalgrÃ¶ÃŸe. 
 
-P12: Wert zu groß
+P12: Wert zu groÃŸ
 
--  Ein angegebener Wert überschreitet die Maximalgröße. 
+-  Ein angegebener Wert Ã¼berschreitet die MaximalgrÃ¶ÃŸe. 
 
 
 
 
 ## Anhang D, RAP-Mount 
 
-Nicht wie sonst im Amiga-System üblich, wurde für RAP! ein eigener *Mount-Befehl* geschrieben, der hauptsächlich die Aufgabe hat, die *Konfigurationsdatei* zu verarbeiten und dann die Laufwerke einzeln anzumelden.
+Nicht wie sonst im Amiga-System Ã¼blich, wurde fÃ¼r RAP! ein eigener *Mount-Befehl* geschrieben, der hauptsÃ¤chlich die Aufgabe hat, die *Konfigurationsdatei* zu verarbeiten und dann die Laufwerke einzeln anzumelden.
 
-Dieses Programm sollte in Ihrer *Startup-Sequence*, *User-Startup* oder im *`WBStartup`* Verzeichnis der Workbench aufgerufen werden. Letzteres geschieht unter OS2 einfach durch Herüberziehen den Icons.
+Dieses Programm sollte in Ihrer *Startup-Sequence*, *User-Startup* oder im *`WBStartup`* Verzeichnis der Workbench aufgerufen werden. Letzteres geschieht unter OS2 einfach durch HerÃ¼berziehen den Icons.
 
 Als erster optionaler Parameter kann der Name der *Konfigurationsdatei* eingegeben werden (Falls nicht angegeben, wird sie auch von `ENVARC:RAP.Config` oder `S:RAP.Config` geladen).
 
-Durch das optional nachfolgende *Schlüsselwort REMOVE* können die Laufwerke abgemeldet werden.
+Durch das optional nachfolgende *SchlÃ¼sselwort REMOVE* kÃ¶nnen die Laufwerke abgemeldet werden.
 
 
 
 
 ## Anhang E, XPK-Standard 
 
-Während der Entwicklungszeit von RAP wurde von einer Gruppe Programmieren ein *Komprimierer-Standard* für den Amiga entwickelt, der nun auch von RAP! unterstützt wird. Dieser Standard und die dazugehörigen Packer sind momentan noch *Public Domain* und somit von jedem zugänglich. Nach einer erfolgreichen Installation sollten auch die *XPK-Packer* erkannt werden. Bitte beachten Sie, daß die *xpkmaster.library* mit der Versionsnummer größer gleich 2 für RAP! benötigt wird, da in den ersten Versionen noch ein kleiner Fehler vorhanden war, der die Verwendung zusammen mit RAP! ausschloß.
+WÃ¤hrend der Entwicklungszeit von RAP wurde von einer Gruppe Programmieren ein *Komprimierer-Standard* fÃ¼r den Amiga entwickelt, der nun auch von RAP! unterstÃ¼tzt wird. Dieser Standard und die dazugehÃ¶rigen Packer sind momentan noch *Public Domain* und somit von jedem zugÃ¤nglich. Nach einer erfolgreichen Installation sollten auch die *XPK-Packer* erkannt werden. Bitte beachten Sie, daÃŸ die *xpkmaster.library* mit der Versionsnummer grÃ¶ÃŸer gleich 2 fÃ¼r RAP! benÃ¶tigt wird, da in den ersten Versionen noch ein kleiner Fehler vorhanden war, der die Verwendung zusammen mit RAP! ausschloÃŸ.
 
-Beachten Sie bitte, daß durch das Verfahren im *RAP!-System* die Kompressionsraten sich um einige Prozente gegenüber den angegebenen Zahlen der *XPK-Packer* verschlechtern können, da die Daten aus technischen Gründen in einzelne Bereiche vor dem Komprimieren aufgestückelt werden (ChunkGröße).
+Beachten Sie bitte, daÃŸ durch das Verfahren im *RAP!-System* die Kompressionsraten sich um einige Prozente gegenÃ¼ber den angegebenen Zahlen der *XPK-Packer* verschlechtern kÃ¶nnen, da die Daten aus technischen GrÃ¼nden in einzelne Bereiche vor dem Komprimieren aufgestÃ¼ckelt werden (ChunkGrÃ¶ÃŸe).
 
 
 
 
 ## Anhang F, Platzhalter 
 
-In allen Pfadangaben sind sogenannte Platzhalter möglich einzugeben, wobei folgende Arten unterstützt werden:
+In allen Pfadangaben sind sogenannte Platzhalter mÃ¶glich einzugeben, wobei folgende Arten unterstÃ¼tzt werden:
 
 "\*", "xx\*" sowie "\*xx".
 
-"\*"	gilt für alle Dateien oder Verzeichnisse.  
-"xx\*"	gilt für Dateien oder Verzeichnisse wie "xxtest" oder "xx" oder "xxyz".  
-"\*xx"	gilt für Dateien oder Verzeichnisse wie "xx" oder "testxx" oder "zyxx".
+"\*"	gilt fÃ¼r alle Dateien oder Verzeichnisse.  
+"xx\*"	gilt fÃ¼r Dateien oder Verzeichnisse wie "xxtest" oder "xx" oder "xxyz".  
+"\*xx"	gilt fÃ¼r Dateien oder Verzeichnisse wie "xx" oder "testxx" oder "zyxx".
 
 
 
 
 ## Anhang G, Die mitgelieferten Packer "scn1" und "runl". 
 
-Momentan werden zwei Packer mitgeliefert, von denen eigentlich der "runl" Packer nicht verwendet werden sollte, da er nur zur Überprüfung geschrieben wurde, und in den meisten Fällen die Daten nur um sehr wenig Prozent komprimiert.
+Momentan werden zwei Packer mitgeliefert, von denen eigentlich der "runl" Packer nicht verwendet werden sollte, da er nur zur ÃœberprÃ¼fung geschrieben wurde, und in den meisten FÃ¤llen die Daten nur um sehr wenig Prozent komprimiert.
 
-Der "scn1" ist momentan einer der schnellsten Amiga LZSS-Packer, der zwar relativ viel (ca. 180KB) Speicher beim Komprimieren benötigt, diesen aber bei der Dekomprimierung freigibt. Er hat eine ungefähre Durchschnittskompression von 40% bis 45%. Bei Textdateien fällt diese Rate etwas höher aus.
-
-
+Der "scn1" ist momentan einer der schnellsten Amiga LZSS-Packer, der zwar relativ viel (ca. 180KB) Speicher beim Komprimieren benÃ¶tigt, diesen aber bei der Dekomprimierung freigibt. Er hat eine ungefÃ¤hre Durchschnittskompression von 40% bis 45%. Bei Textdateien fÃ¤llt diese Rate etwas hÃ¶her aus.
 
 
 
-## Anhang H, Tastaturkürzel im Konfigurationsprogramm 
 
-Da nicht alle Tastaturkürzel bei den Funktionsknöpfen mit einem Unterstrich versehen sind, finden Sie nachfolgend noch ein komplette Aufstellung der Tastaturkürzel.
+
+## Anhang H, TastaturkÃ¼rzel im Konfigurationsprogramm 
+
+Da nicht alle TastaturkÃ¼rzel bei den FunktionsknÃ¶pfen mit einem Unterstrich versehen sind, finden Sie nachfolgend noch ein komplette Aufstellung der TastaturkÃ¼rzel.
 
 Basisfenster:
 
-`l`	Laufwerk anfügen  
-`p`	Pfad anfügen  
-`u`	Unterpfad anfügen
+`l`	Laufwerk anfÃ¼gen  
+`p`	Pfad anfÃ¼gen  
+`u`	Unterpfad anfÃ¼gen
 
 `e`	Eintrag editieren  
 `a`	Eintrag aktualisieren
 
 `c`	Block ausschneiden  
-`n`	Block anfügen  
-`t`	Block unter-anfügen
+`n`	Block anfÃ¼gen  
+`t`	Block unter-anfÃ¼gen
 
 Globale Laufwerkseinstellungen sowie Laufwerkseinstellungen:
 
@@ -664,6 +666,6 @@ Passworteingabe:
 
 Alle Hinweisfenster:
 
-`v`	Bestätigung (Knopf am weitesten links)  
+`v`	BestÃ¤tigung (Knopf am weitesten links)  
 `b`	Abbruch oder OK! (Knopf am weitesten rechts)
 

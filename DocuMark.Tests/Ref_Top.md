@@ -1,14 +1,14 @@
-Inhaltsverzeichnis TOP!
+ï»¿Inhaltsverzeichnis TOP!
 
 
 
-Einführung
+EinfÃ¼hrung
 
 1	Das Programm  
 1.1	Laufwerksauswahl  
 1.2	Ziellaufwerk  
-1.3	Prüfen  
-1.3.1	Prüfen unterbrechen  
+1.3	PrÃ¼fen  
+1.3.1	PrÃ¼fen unterbrechen  
 1.4	Scan  
 1.4.1	Laufwerk freigeben  
 1.5	Optimieren  
@@ -21,12 +21,16 @@ Einführung
 1.6	TOP! beenden
 
 Anhang A	Statusanzeige  
-Anhang B	Tastaturkürzel  
+Anhang B	TastaturkÃ¼rzel  
 Anhang C	Fehlermeldungen beim Datenzugriff
 
-# Einführung 
+Diese Referenz wurde von Guid Ruhl verfasst und mit mit freundlicher Erlaubnis von Pearson â€‹Deutschland GmbH fÃ¼r die Freeware Version von RAP!TOP!COP! zur VerfÃ¼gung gestellt.
 
-Durch häufige Zugriffe auf Datenträgern seien es Festplatten oder Disketten, können systembedingt die Zugriffsgeschwindigkeiten auf einzelne Dateien merkbar herabsinken. Die Dateien werden ungewollt zerstückelt und an mehreren verschiedenen Positionen auf dem Datenträger verteilt. Diese *Fragmentierungen* treten häufig dann auf, wenn auf einem Datenträger Dateien häufig gelöscht oder umkopiert werden.
+(c) Pearson â€‹Deutschland GmbH
+
+# EinfÃ¼hrung 
+
+Durch hÃ¤ufige Zugriffe auf DatentrÃ¤gern seien es Festplatten oder Disketten, kÃ¶nnen systembedingt die Zugriffsgeschwindigkeiten auf einzelne Dateien merkbar herabsinken. Die Dateien werden ungewollt zerstÃ¼ckelt und an mehreren verschiedenen Positionen auf dem DatentrÃ¤ger verteilt. Diese *Fragmentierungen* treten hÃ¤ufig dann auf, wenn auf einem DatentrÃ¤ger Dateien hÃ¤ufig gelÃ¶scht oder umkopiert werden.
 
 Diesem Problem widmet sich nun TOP!. TOP! versucht mit einigen relativ komplizierten Algorithmen die Dateien zu defragmentieren und neu anzulegen.
 
@@ -35,7 +39,7 @@ Diesem Problem widmet sich nun TOP!. TOP! versucht mit einigen relativ komplizie
 
 # 1 Das Programm 
 
-Nach dem Start von TOP! mit einem Doppelklick erscheint auf der Workbench die *Oberfläche*, die in verschiedenen Bereichen unterteilt ist. Die nachfolgend in funktionsbezogener Reihenfolge beschrieben werden.
+Nach dem Start von TOP! mit einem Doppelklick erscheint auf der Workbench die *OberflÃ¤che*, die in verschiedenen Bereichen unterteilt ist. Die nachfolgend in funktionsbezogener Reihenfolge beschrieben werden.
 
 
 
@@ -43,11 +47,11 @@ Nach dem Start von TOP! mit einem Doppelklick erscheint auf der Workbench die *O
 ## 1.1 Laufwerksauswahl 
 
 
-In der Mitte des Fensters (unter dem `Laufw. freig.` Knopf) befindet sich die Laufwerksauswahl, in der mindestens das Laufwerk "DF0:" erscheinen sollte. Bevor irgendeine weitere Funktion ausgewählt wird, sollte zuerst das zu bearbeitende Laufwerk angewählt werden.
+In der Mitte des Fensters (unter dem `Laufw. freig.` Knopf) befindet sich die Laufwerksauswahl, in der mindestens das Laufwerk "DF0:" erscheinen sollte. Bevor irgendeine weitere Funktion ausgewÃ¤hlt wird, sollte zuerst das zu bearbeitende Laufwerk angewÃ¤hlt werden.
 
-Mit einem Doppelklick auf das Laufwerk ist die Anzeige von einigen physikalischen Informationen des Datenträgers möglich. Mit einem Druck auf `OK!` verschwindet das Laufwerksinformationsfenster wieder.
+Mit einem Doppelklick auf das Laufwerk ist die Anzeige von einigen physikalischen Informationen des DatentrÃ¤gers mÃ¶glich. Mit einem Druck auf `OK!` verschwindet das Laufwerksinformationsfenster wieder.
 
-Nach der Aktivierung des Laufwerks, können weitere Funktionen angewählt werden. Um von einen Datenträger auf einen zweiten zu optimieren ist es bei Bedarf möglich ein Ziellaufwerk mit Hilfe von `Ziel` und der darunterliegenden zweiten Laufwerksauswahl anzuwählen. Dies ist besonders aus Sicherheitsgründen sinnvoll, oder falls wenig Speicherplatz vorhanden ist. Natürlich ist es hier nur möglich auf einen Datenträger zu optimieren, der die selbe physikalische Größe hat.
+Nach der Aktivierung des Laufwerks, kÃ¶nnen weitere Funktionen angewÃ¤hlt werden. Um von einen DatentrÃ¤ger auf einen zweiten zu optimieren ist es bei Bedarf mÃ¶glich ein Ziellaufwerk mit Hilfe von `Ziel` und der darunterliegenden zweiten Laufwerksauswahl anzuwÃ¤hlen. Dies ist besonders aus SicherheitsgrÃ¼nden sinnvoll, oder falls wenig Speicherplatz vorhanden ist. NatÃ¼rlich ist es hier nur mÃ¶glich auf einen DatentrÃ¤ger zu optimieren, der die selbe physikalische GrÃ¶ÃŸe hat.
 
 
 
@@ -55,84 +59,84 @@ Nach der Aktivierung des Laufwerks, können weitere Funktionen angewählt werden. 
 ## 1.2 Ziellaufwerk 
 
 
-Mit dem Knopf `Ziel` wird ein Ziellaufwerk aktiviert. Ist `Ziel` nicht angewählt, wird eine eventuelle Optimierung nur auf einem Laufwerk durchgeführt. Das Ziellaufwerk kann bei einem *abgehakten* `Ziel` Knopf mit der darunter befindlichen Laufwerksauswahl eingestellt werden.
+Mit dem Knopf `Ziel` wird ein Ziellaufwerk aktiviert. Ist `Ziel` nicht angewÃ¤hlt, wird eine eventuelle Optimierung nur auf einem Laufwerk durchgefÃ¼hrt. Das Ziellaufwerk kann bei einem *abgehakten* `Ziel` Knopf mit der darunter befindlichen Laufwerksauswahl eingestellt werden.
 
-Bitte beachten Sie, daß die Laufwerke die selbe physikalische Größe haben müssen. Falls dennoch verschieden große Laufwerke eingestellt wurden, wird vor der Optimierung ein entsprechender Hinweis ausgegeben.
+Bitte beachten Sie, daÃŸ die Laufwerke die selbe physikalische GrÃ¶ÃŸe haben mÃ¼ssen. Falls dennoch verschieden groÃŸe Laufwerke eingestellt wurden, wird vor der Optimierung ein entsprechender Hinweis ausgegeben.
 
-Auch hier können durch einen Doppelklick Informationen über ein bestimmtes Laufwerk ausgegeben werden.
+Auch hier kÃ¶nnen durch einen Doppelklick Informationen Ã¼ber ein bestimmtes Laufwerk ausgegeben werden.
 
-Wie angesprochen hat die Optimierung auf ein anderes Laufwerk den Vorteil, daß hierdurch keine Daten zerstört werden können und daß der Optimierungsvorgang durch die ausfallende Sortierung und Zwischenlagerung der Datenblöcke verschnellert wird.
-
-
+Wie angesprochen hat die Optimierung auf ein anderes Laufwerk den Vorteil, daÃŸ hierdurch keine Daten zerstÃ¶rt werden kÃ¶nnen und daÃŸ der Optimierungsvorgang durch die ausfallende Sortierung und Zwischenlagerung der DatenblÃ¶cke verschnellert wird.
 
 
-## 1.3 Prüfen 
 
-Nach Auswahl eines Laufwerks sollte zunächst bei der erstmaligen Verwendung von TOP! die Überprüfung gestartet werden. Die Überprüfung versucht einfach alle Datenblöcke des Trägers einmal in den Speicher zu lesen, um sicherzugehen, daß sich keine schwerwiegenden Fehler auf dem Datenträger befinden.
 
-Beim Start der *Prüfvorgang* werden einige Veränderungen in dem Fenster erkennbar. Zuerst werden alle möglichen Knöpfe mit einem schwarzen Punktemuster überzogen, um deren Auswahl zu vermeiden. Links in der Mitte wechselt die Statusanzeige von "warte..." auf "Prüfen". Wenn die Diskette richtig eingelegt ist, und sie auch vom Betriebssystem als DOS-Diskette erkannt wurde, startet die trackweise Überprüfung.
+## 1.3 PrÃ¼fen 
 
-Während der Überprüfung wird die *Trackanzeige*, die sich links oben im größten abgetrennten Bereich des Fensters befindet, je nach Anzahl der schon überprüften Spuren, aufgefüllt. Rechts neben der *Statusanzeige* befindet sich eine Füllanzeige, die sich von links nach rechts auffüllt und zusätzlich noch den prozentualen Wert der schon überprüften Datenblöcke enthält.
+Nach Auswahl eines Laufwerks sollte zunÃ¤chst bei der erstmaligen Verwendung von TOP! die ÃœberprÃ¼fung gestartet werden. Die ÃœberprÃ¼fung versucht einfach alle DatenblÃ¶cke des TrÃ¤gers einmal in den Speicher zu lesen, um sicherzugehen, daÃŸ sich keine schwerwiegenden Fehler auf dem DatentrÃ¤ger befinden.
+
+Beim Start der *PrÃ¼fvorgang* werden einige VerÃ¤nderungen in dem Fenster erkennbar. Zuerst werden alle mÃ¶glichen KnÃ¶pfe mit einem schwarzen Punktemuster Ã¼berzogen, um deren Auswahl zu vermeiden. Links in der Mitte wechselt die Statusanzeige von "warte..." auf "PrÃ¼fen". Wenn die Diskette richtig eingelegt ist, und sie auch vom Betriebssystem als DOS-Diskette erkannt wurde, startet die trackweise ÃœberprÃ¼fung.
+
+WÃ¤hrend der ÃœberprÃ¼fung wird die *Trackanzeige*, die sich links oben im grÃ¶ÃŸten abgetrennten Bereich des Fensters befindet, je nach Anzahl der schon Ã¼berprÃ¼ften Spuren, aufgefÃ¼llt. Rechts neben der *Statusanzeige* befindet sich eine FÃ¼llanzeige, die sich von links nach rechts auffÃ¼llt und zusÃ¤tzlich noch den prozentualen Wert der schon Ã¼berprÃ¼ften DatenblÃ¶cke enthÃ¤lt.
 
 Diese drei Anzeige-Komponenten (Trackanzeige, Statusanzeige und Fortschrittsanzeige) werden auch in den Funktionen Scan und Optimieren verwendet.
 
-Der Prüfvorgang kann jederzeit mit einem Druck auf `Stop` oder `s` abgebrochen werden.
+Der PrÃ¼fvorgang kann jederzeit mit einem Druck auf `Stop` oder `s` abgebrochen werden.
 
-Nach einer erfolgreichen Überprüfung sollte eine Bestätigung erscheinen, daß sich keine Fehler auf dem Datenträger befinden. Falls ein Fehler aufgetreten ist, sollte die Optimierung anschließend nicht gestartet werden. Auch falls ein nachträgliches *scannen* des Laufwerks keine Fehler ausgibt, ist von einer Optimierung abzuraten.
+Nach einer erfolgreichen ÃœberprÃ¼fung sollte eine BestÃ¤tigung erscheinen, daÃŸ sich keine Fehler auf dem DatentrÃ¤ger befinden. Falls ein Fehler aufgetreten ist, sollte die Optimierung anschlieÃŸend nicht gestartet werden. Auch falls ein nachtrÃ¤gliches *scannen* des Laufwerks keine Fehler ausgibt, ist von einer Optimierung abzuraten.
 
 
 
 
 ## 1.4 Scan 
 
-Vor der Optimierung muß das Laufwerk immer zuerst *gescannt* werden. `Scan` analysiert und speichert die komplette Verzeichnisstruktur Ihres Datenträgers, und kann nach der erfolgreichen Verarbeitung dieser Informationen dem Benutzer genau mitteilen, wie stark die auf dem Datenträger befindlichen Dateien fragmentiert sind.
+Vor der Optimierung muÃŸ das Laufwerk immer zuerst *gescannt* werden. `Scan` analysiert und speichert die komplette Verzeichnisstruktur Ihres DatentrÃ¤gers, und kann nach der erfolgreichen Verarbeitung dieser Informationen dem Benutzer genau mitteilen, wie stark die auf dem DatentrÃ¤ger befindlichen Dateien fragmentiert sind.
 
-Während dem *Scannvorgang* werden keine Daten geschrieben. `Scan` kann also getrost auf alle möglichen Festplattenpartitionen oder Disketten losgelassen werden, um den Grad der Verwüstung anzuzeigen.
+WÃ¤hrend dem *Scannvorgang* werden keine Daten geschrieben. `Scan` kann also getrost auf alle mÃ¶glichen Festplattenpartitionen oder Disketten losgelassen werden, um den Grad der VerwÃ¼stung anzuzeigen.
 
-Nach einem Druck auf `Scan` werden wie bei "Prüfen" fast alle Knöpfe mit einem Schwarzschleier überzogen. Die Statusanzeige wechselt um in "Scannen", und die Trackanzeige oben links zeigt nun dunkle und helle Punkte oder Striche an (Alle Farbangaben beziehen sich auf die Standardfarben einer Workbench 2.x). Jeder dieser Farbkleckser ist ein Block auf dem Datenträger. Ein heller Klecks ist ein Infoblock, der nur zur Verwaltung der Daten vorhanden ist. Ein dunkler Klecks ist ein Datenblock.
+Nach einem Druck auf `Scan` werden wie bei "PrÃ¼fen" fast alle KnÃ¶pfe mit einem Schwarzschleier Ã¼berzogen. Die Statusanzeige wechselt um in "Scannen", und die Trackanzeige oben links zeigt nun dunkle und helle Punkte oder Striche an (Alle Farbangaben beziehen sich auf die Standardfarben einer Workbench 2.x). Jeder dieser Farbkleckser ist ein Block auf dem DatentrÃ¤ger. Ein heller Klecks ist ein Infoblock, der nur zur Verwaltung der Daten vorhanden ist. Ein dunkler Klecks ist ein Datenblock.
 
 Der *Scannvorgang* kann jederzeit mit `Stop` abgebrochen werden.
 
-Je nach dem wie diese Farben in der Trackanzeige verteilt sind, fällt auch dann das Scan-Ergebnis aus, das nach dem *Scannvorgang* erscheint.
+Je nach dem wie diese Farben in der Trackanzeige verteilt sind, fÃ¤llt auch dann das Scan-Ergebnis aus, das nach dem *Scannvorgang* erscheint.
 
-Zwei Werte werden hier ausgegeben, von denen der erste der wichtigere ist. Dieser Wert gibt die Anzahl der Dateien in Prozent an, die mindestens in zwei Teile zerteilt sind. Sind also zum Beispiel 20% fragmentiert, ist durchschnittlich jede fünfte Datei in ein oder mehrere Teile zerstückelt!
+Zwei Werte werden hier ausgegeben, von denen der erste der wichtigere ist. Dieser Wert gibt die Anzahl der Dateien in Prozent an, die mindestens in zwei Teile zerteilt sind. Sind also zum Beispiel 20% fragmentiert, ist durchschnittlich jede fÃ¼nfte Datei in ein oder mehrere Teile zerstÃ¼ckelt!
 
-Die Anzeige der "fragmentierten Infos" ist mehr für die wirklichen CLI-Freaks gedacht. Desto kleiner dieser Wert, desto schneller können Verzeichnisse vom CLI aus angezeigt werden. Da die Workbench zusätzlich zu den Verzeichnissen noch Icons mitspeichert, und diese dann beim Lesen einlädt, gibt es hierfür eine andere Optimierungsart.
+Die Anzeige der "fragmentierten Infos" ist mehr fÃ¼r die wirklichen CLI-Freaks gedacht. Desto kleiner dieser Wert, desto schneller kÃ¶nnen Verzeichnisse vom CLI aus angezeigt werden. Da die Workbench zusÃ¤tzlich zu den Verzeichnissen noch Icons mitspeichert, und diese dann beim Lesen einlÃ¤dt, gibt es hierfÃ¼r eine andere Optimierungsart.
 
 Das Fenster mit dem *Scan-Ergebnis* kann durch einen Klick auf `OK!` verlassen werden.
 
 
 ### 1.4.1 Laufwerk freigeben 
 
-TOP! geht nach dem erfolgreichen *scannen* eines Datenträgers davon aus, daß dieses Laufwerk danach optimiert wird. Da TOP! sichergehen will, daß keine Informationen auf dem Datenträger geändert werden, bleibt das Laufwerk in den Händen von TOP!.
+TOP! geht nach dem erfolgreichen *scannen* eines DatentrÃ¤gers davon aus, daÃŸ dieses Laufwerk danach optimiert wird. Da TOP! sichergehen will, daÃŸ keine Informationen auf dem DatentrÃ¤ger geÃ¤ndert werden, bleibt das Laufwerk in den HÃ¤nden von TOP!.
 
-Um auf das Laufwerk in diesem Fall wieder zuzugreifen, ist ein Klick auf `Laufw. freig.` nötig.
+Um auf das Laufwerk in diesem Fall wieder zuzugreifen, ist ein Klick auf `Laufw. freig.` nÃ¶tig.
 
-Wenn eine Optimierung ohne vorherigem Scannen gestartet wird, wird Scan automatisch durchgeführt.
+Wenn eine Optimierung ohne vorherigem Scannen gestartet wird, wird Scan automatisch durchgefÃ¼hrt.
 
 
 
 
 ## 1.5 Optimieren 
 
-Kommen wir nun zum Hauptpunkt von TOP!. Das Optimieren. Bevor aber der Hauptgang gestartet wird, sollten folgende Parameter noch überprüft, beziehungsweise verändert werden.
+Kommen wir nun zum Hauptpunkt von TOP!. Das Optimieren. Bevor aber der Hauptgang gestartet wird, sollten folgende Parameter noch Ã¼berprÃ¼ft, beziehungsweise verÃ¤ndert werden.
 
 
 ### 1.5.1 WB-Modus 
 
 Der `WB-Modus` sollte bei einer intensiven Nutzung der Workbench eingestellt werden.
 
-In diesem speziellen Optimierungsmodus werden die Icons, die auf der Workbench plaziert sind zwischen die Informationsblöcke gelegt. Es entsteht dadurch bei der Benutzung der Workbench ein merkbarer Geschwindigkeitsvorteil beim Öffnen von Verzeichnissen.
+In diesem speziellen Optimierungsmodus werden die Icons, die auf der Workbench plaziert sind zwischen die InformationsblÃ¶cke gelegt. Es entsteht dadurch bei der Benutzung der Workbench ein merkbarer Geschwindigkeitsvorteil beim Ã–ffnen von Verzeichnissen.
 
 
 ### 1.5.2 CLI-Modus 
 
-Falls hauptsächlich mit dem *CLI* gearbeitet wird, ist eine Optimierung mit dem `CLI-Modus` wohl am besten geeignet. Hier werden einfach nur die Informationsblöcke aneinandergereiht, um das möglichst schnelle Lesen eines Verzeichnisses zu verschnellern.
+Falls hauptsÃ¤chlich mit dem *CLI* gearbeitet wird, ist eine Optimierung mit dem `CLI-Modus` wohl am besten geeignet. Hier werden einfach nur die InformationsblÃ¶cke aneinandergereiht, um das mÃ¶glichst schnelle Lesen eines Verzeichnisses zu verschnellern.
 
 
 ### 1.5.3 ReadBuff 
 
-Hier kann optional ein zusätzlicher Trackbuffer beim Lesen eingestellt werden. Je nach Laufwerk und Fragmentierung können sich durch das Einschalten von `ReadBuff` erhebliche Geschwindigkeitsvorteile ergeben.
+Hier kann optional ein zusÃ¤tzlicher Trackbuffer beim Lesen eingestellt werden. Je nach Laufwerk und Fragmentierung kÃ¶nnen sich durch das Einschalten von `ReadBuff` erhebliche Geschwindigkeitsvorteile ergeben.
 
 
 ### 1.5.4 Gfx-Anzeige 
@@ -142,7 +146,7 @@ Da der Aufbau der linken oberen Trackanzeige beim Optimieren relativ Aufwendig i
 
 ### 1.5.5 Verbrauch 
 
-Hier kann der ungefähre Speicherverbrauch von TOP! mit den Pfeiltasten eingestellt werden. Ist der links neben den Tasten befindliche Bereich aufgefüllt, wird fast der gesamte Speicher für die Zwischenspeicherung der Datenblöcke hergenommen. Ist er leer, wird so wenig wie nötig verwendet.
+Hier kann der ungefÃ¤hre Speicherverbrauch von TOP! mit den Pfeiltasten eingestellt werden. Ist der links neben den Tasten befindliche Bereich aufgefÃ¼llt, wird fast der gesamte Speicher fÃ¼r die Zwischenspeicherung der DatenblÃ¶cke hergenommen. Ist er leer, wird so wenig wie nÃ¶tig verwendet.
 
 Die Anzahl der freien Bytes im Hauptspeicher kann jederzeit rechts unten unter "Bytes frei" abgelesen werden.
 
@@ -150,22 +154,22 @@ Die Anzahl der freien Bytes im Hauptspeicher kann jederzeit rechts unten unter "
 
 ### 1.5.6 Start 
 
-Nach den oben beschriebenen Einstellung kann nun die Optimierung begonnen werden. Falls vorher noch nicht gescannt wurde, oder vielleicht einige wichtige Parameter geändert wurden, wird der *Scannvorgang* nochmals gestartet. Wobei diesmal kein Scan-Ergebnis mehr ausgegeben wird. Auch ist nun eine Unterbrechung nicht mehr möglich!
+Nach den oben beschriebenen Einstellung kann nun die Optimierung begonnen werden. Falls vorher noch nicht gescannt wurde, oder vielleicht einige wichtige Parameter geÃ¤ndert wurden, wird der *Scannvorgang* nochmals gestartet. Wobei diesmal kein Scan-Ergebnis mehr ausgegeben wird. Auch ist nun eine Unterbrechung nicht mehr mÃ¶glich!
 
-Bitte vergewissern Sie sich vorher, daß Sie sich eine *Sicherheitskopie* von den wichtigsten Daten angelegt haben!
+Bitte vergewissern Sie sich vorher, daÃŸ Sie sich eine *Sicherheitskopie* von den wichtigsten Daten angelegt haben!
 
-Bitte beachten Sie auch, daß nicht schon optimierte Datenträger optimiert werden, da sich dadurch systembedingt größere interne Berechnungszeiten beim Status "Bewegen" ergeben können!
+Bitte beachten Sie auch, daÃŸ nicht schon optimierte DatentrÃ¤ger optimiert werden, da sich dadurch systembedingt grÃ¶ÃŸere interne Berechnungszeiten beim Status "Bewegen" ergeben kÃ¶nnen!
 
-Nach dem Scannen des Datenträgers führt die Optimierung noch einige interne Tests durch, und beginnt dann mit dem Kopieren der Daten. Zuerst werden Daten an beliebigen Positionen in den Speicher gelesen (hell dargestellt), und dann wieder zurückgespeichert (in blau dargestellt). Dieser Vorgang wiederholt sich solange, bis keine Datenblöcke mehr vorhanden sind. Die Geschwindigkeit ist abhängig von der Anzahl der Datenblöcke, von der Geschwindigkeit Ihres Laufwerkes sowie die Menge des Speichers, die dem Programm zum Verschieben der Daten zur Verfügung gestellt wurde.
+Nach dem Scannen des DatentrÃ¤gers fÃ¼hrt die Optimierung noch einige interne Tests durch, und beginnt dann mit dem Kopieren der Daten. Zuerst werden Daten an beliebigen Positionen in den Speicher gelesen (hell dargestellt), und dann wieder zurÃ¼ckgespeichert (in blau dargestellt). Dieser Vorgang wiederholt sich solange, bis keine DatenblÃ¶cke mehr vorhanden sind. Die Geschwindigkeit ist abhÃ¤ngig von der Anzahl der DatenblÃ¶cke, von der Geschwindigkeit Ihres Laufwerkes sowie die Menge des Speichers, die dem Programm zum Verschieben der Daten zur VerfÃ¼gung gestellt wurde.
 
-Bitte beachten Sie, daß bei einer Unterbrechung während der Optimierung durch z.B. Ausschalten des Computers wichtige Daten verloren gehen können!
+Bitte beachten Sie, daÃŸ bei einer Unterbrechung wÃ¤hrend der Optimierung durch z.B. Ausschalten des Computers wichtige Daten verloren gehen kÃ¶nnen!
 
 
 
 
 ## 1.6 TOP! beenden 
 
-Das Programm kann entweder durch einen Druck auf den Schließknopf links oben am Fenster beendet werden, oder durch einen Druck auf den `Ende` Knopf.
+Das Programm kann entweder durch einen Druck auf den SchlieÃŸknopf links oben am Fenster beendet werden, oder durch einen Druck auf den `Ende` Knopf.
 
 
 
@@ -179,9 +183,9 @@ warte...
 
 -  Hier wird auf eine Eingabe des Benutzers gewartet 
 
-Prüfen
+PrÃ¼fen
 
--  Momentan wird ein Datenträger überprüft 
+-  Momentan wird ein DatentrÃ¤ger Ã¼berprÃ¼ft 
 
 Scannen
 
@@ -189,19 +193,19 @@ Scannen
 
 Korrigieren
 
--  Die gescannten Blöcke werden im Speicher korrigiert 
+-  Die gescannten BlÃ¶cke werden im Speicher korrigiert 
 
 Sortieren
 
--  Die gescannten Blöcke werden im Speicher sortiert 
+-  Die gescannten BlÃ¶cke werden im Speicher sortiert 
 
 LRTest
 
--  Aus Geschwindigkeitsgründen wird hier überprüft, wierum ein Datenträger optimiert werden soll. 
+-  Aus GeschwindigkeitsgrÃ¼nden wird hier Ã¼berprÃ¼ft, wierum ein DatentrÃ¤ger optimiert werden soll. 
 
 Bewegen
 
--  Diese Funktion findet heraus, welche Blöcke im nächsten Verschiebevorgang bearbeitet werden müssen. Teilweise kann diese Funktion relativ viel Zeit in Anspruch nehmen. 
+-  Diese Funktion findet heraus, welche BlÃ¶cke im nÃ¤chsten Verschiebevorgang bearbeitet werden mÃ¼ssen. Teilweise kann diese Funktion relativ viel Zeit in Anspruch nehmen. 
 
 Lesen
 
@@ -209,18 +213,18 @@ Lesen
 
 Koordinieren
 
--  Die Zeiger aller eingelesenen Informationsblöcke werden korrigiert. 
+-  Die Zeiger aller eingelesenen InformationsblÃ¶cke werden korrigiert. 
 
 Schreiben
 
--  Die Daten werden wieder zurückgeschrieben. 
+-  Die Daten werden wieder zurÃ¼ckgeschrieben. 
 
 
 
 
-## Anhang B Tastaturkürzel 
+## Anhang B TastaturkÃ¼rzel 
 
-Im Fenster von TOP! sind die meisten Funktionen durch die folgenden Tastaturkürzel auswählbar:
+Im Fenster von TOP! sind die meisten Funktionen durch die folgenden TastaturkÃ¼rzel auswÃ¤hlbar:
 
 Einstellungen:
 
@@ -239,18 +243,18 @@ Laufwerksauswahl:
 `l`	Laufwerk freigeben  
 `z`	Ziel
 
-Aktionsknöpfe
+AktionsknÃ¶pfe
 
-`p`	Prüfen  
+`p`	PrÃ¼fen  
 `s`	Scan  
 `s`	Stop...  
 `o`	Optimieren...  
-`ü`	Über...  
+`Ã¼`	Ãœber...  
 `e`	Ende
 
 Verschiedene Hinweisfenster:
 
-`v`	Bestätigung (linker Knopf)  
+`v`	BestÃ¤tigung (linker Knopf)  
 `b`	Abbruch (rechter Knopf)
 
 
@@ -259,21 +263,21 @@ Verschiedene Hinweisfenster:
 ## Anhang C Fehlermeldungen beim Datenzugriff 
 
 
-Folgende Fehler können beim Lesen oder Schreiben von Daten vorkommen:
+Folgende Fehler kÃ¶nnen beim Lesen oder Schreiben von Daten vorkommen:
 
 Kein Sektor-Header  
 Falsche Sektor-Preamble  
 Falsche Sektor-ID  
-Falsche Header-Prüfsumme  
-Falsche Sektor-Prüfsumme  
+Falsche Header-PrÃ¼fsumme  
+Falsche Sektor-PrÃ¼fsumme  
 Zu wenige Sektoren  
 Falscher Sektor-Header
 
--  Alle diese Fehlermeldungen deuten darauf hin, daß ein Sektor beziehungsweise eine Spur defekt ist. 
+-  Alle diese Fehlermeldungen deuten darauf hin, daÃŸ ein Sektor beziehungsweise eine Spur defekt ist. 
 
-Schreibgeschützt
+SchreibgeschÃ¼tzt
 
--  Der Datenträger ist schreibgeschützt. 
+-  Der DatentrÃ¤ger ist schreibgeschÃ¼tzt. 
 
 Diskette gewechselt
 

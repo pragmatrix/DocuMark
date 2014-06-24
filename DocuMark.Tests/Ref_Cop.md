@@ -1,11 +1,8 @@
-\\\ Referenz
-
-
-Inhaltsverzeichnis COP!
+ï»¿Inhaltsverzeichnis COP!
 
 Einleitung
 
-1	Oberfläche  
+1	OberflÃ¤che  
 1.1	Laufwerksauswahl  
 1.2	Anzeigebereich  
 1.3	Statusanzeige
@@ -22,33 +19,37 @@ Einleitung
 
 3	Inhalt
 
-4	Aktionsknöpfe
+4	AktionsknÃ¶pfe
 
 4.1	Lesen  
 4.2	Schreiben  
 4.3	Kopieren  
-4.4	Überprüfen  
+4.4	ÃœberprÃ¼fen  
 4.5	Formatieren
 
-Anhang A	Tastaturkürzel  
+Anhang A	TastaturkÃ¼rzel  
 Anhang B	Fehlermeldungen beim Datenzugriff \\\ \*\*\*\*((((siehe TOP!)))\*\*\*\*
+
+Diese Referenz wurde von Guid Ruhl verfasst und mit mit freundlicher Erlaubnis von Pearson â€‹Deutschland GmbH fÃ¼r die Freeware Version von RAP!TOP!COP! zur VerfÃ¼gung gestellt.
+
+(c) Pearson â€‹Deutschland GmbH
 
 # Einleitung 
 
-Da auf Datenträger wie Disketten oder manchen Festplatten Fehler auftreten können, sollten von wichtigen Programmen Sicherheitskopien angefertigt werden. COP! bietet nun diese Möglichkeit mit einigen interessanten Zusatzfunktionen, wie die Überprüfung und Formatierung von Datenträgern, sowie das Archivieren von Disketten mit Hilfe eines *externen Komprimierers*.
+Da auf DatentrÃ¤ger wie Disketten oder manchen Festplatten Fehler auftreten kÃ¶nnen, sollten von wichtigen Programmen Sicherheitskopien angefertigt werden. COP! bietet nun diese MÃ¶glichkeit mit einigen interessanten Zusatzfunktionen, wie die ÃœberprÃ¼fung und Formatierung von DatentrÃ¤gern, sowie das Archivieren von Disketten mit Hilfe eines *externen Komprimierers*.
 
 
 
 
-# 1 Oberfläche 
+# 1 OberflÃ¤che 
 
-Wie gewohnt wird COP! durch einen Doppelklick auf dessen Icon gestartet. Kurz darauf sollte die Oberfläche erscheinen, die in drei vertikale Bereiche aufgeteilt ist.
+Wie gewohnt wird COP! durch einen Doppelklick auf dessen Icon gestartet. Kurz darauf sollte die OberflÃ¤che erscheinen, die in drei vertikale Bereiche aufgeteilt ist.
 
-Im oberen Bereich befindet sich links die Laufwerksauswahl (`Quelle`, `Ziel(e)` und rechts der Listenanzeigebereich, wo zuerst die schon bearbeiteten Datenträger aufgelistet werden, und rechts daneben die Fehler im letzten Bearbeitungsvorgang.
+Im oberen Bereich befindet sich links die Laufwerksauswahl (`Quelle`, `Ziel(e)` und rechts der Listenanzeigebereich, wo zuerst die schon bearbeiteten DatentrÃ¤ger aufgelistet werden, und rechts daneben die Fehler im letzten Bearbeitungsvorgang.
 
-Darunter befindet sich ein kleinerer Bereich, der den *aktuellen Status* anzeigt (momentan steht hier "warte..."), sowie eine *Füllstandsanzeige* mit Prozentangabe, die das Fortschreiten eines *Bearbeitungsvorganges* anzeigt. An der Füllstandsanzeige befindet sich noch der `Stop!`-knopf, der das Unterbrechen jedes Bearbeitungsvorganges erlaubt. Rechts daneben wird noch die aktuelle Spur sowie die seit dem Start verstrichene Zeit in Stunden, Minuten und Sekunden angezeigt.
+Darunter befindet sich ein kleinerer Bereich, der den *aktuellen Status* anzeigt (momentan steht hier "warte..."), sowie eine *FÃ¼llstandsanzeige* mit Prozentangabe, die das Fortschreiten eines *Bearbeitungsvorganges* anzeigt. An der FÃ¼llstandsanzeige befindet sich noch der `Stop!`-knopf, der das Unterbrechen jedes Bearbeitungsvorganges erlaubt. Rechts daneben wird noch die aktuelle Spur sowie die seit dem Start verstrichene Zeit in Stunden, Minuten und Sekunden angezeigt.
 
-Im untersten Bereich des Fensters sind die Buffer-Einstellungen, sowie die Spureinstellungen und Aktionsknöpfe plaziert.
+Im untersten Bereich des Fensters sind die Buffer-Einstellungen, sowie die Spureinstellungen und AktionsknÃ¶pfe plaziert.
 
 
 
@@ -57,24 +58,24 @@ Im untersten Bereich des Fensters sind die Buffer-Einstellungen, sowie die Spure
 
 Links oben im Fenster von COP! befinden sich zwei Listenanzeigen, in denen Ihre angemeldeten Laufwerke dargestellt werden sollen.
 
-In der Listenanzeige, die mit `Quelle` bezeichnet ist, wird das Quellaufwerk angewählt. Von diesem Laufwerk können also nur Daten gelesen werden. Wird hier ein Laufwerk angewählt, das nicht der physikalischen Größen eines Ziellaufwerkes entspricht oder schon als Ziellaufwerk angegeben wurde, wird das Laufwerk in der Ziel-Listenanzeige deaktiviert.
+In der Listenanzeige, die mit `Quelle` bezeichnet ist, wird das Quellaufwerk angewÃ¤hlt. Von diesem Laufwerk kÃ¶nnen also nur Daten gelesen werden. Wird hier ein Laufwerk angewÃ¤hlt, das nicht der physikalischen GrÃ¶ÃŸen eines Ziellaufwerkes entspricht oder schon als Ziellaufwerk angegeben wurde, wird das Laufwerk in der Ziel-Listenanzeige deaktiviert.
 
-Rechts daneben befindet sich die Laufwerksauswahl für das oder die Ziellaufwerke. Hier können bei Bedarf mehrere Ziellaufwerke ausgewählt werden. Sollten die physikalischen Größen der Laufwerke unterschiedlich sein, oder ist das Laufwerk schon als Quellaufwerk verwendet worden, kann das Quellaufwerk automatisch deaktiviert werden. Sollte innerhalb dieser Anzeige ein Problem mit der physikalischen Größe auftreten, erscheint ein entsprechender Hinweis.
+Rechts daneben befindet sich die Laufwerksauswahl fÃ¼r das oder die Ziellaufwerke. Hier kÃ¶nnen bei Bedarf mehrere Ziellaufwerke ausgewÃ¤hlt werden. Sollten die physikalischen GrÃ¶ÃŸen der Laufwerke unterschiedlich sein, oder ist das Laufwerk schon als Quellaufwerk verwendet worden, kann das Quellaufwerk automatisch deaktiviert werden. Sollte innerhalb dieser Anzeige ein Problem mit der physikalischen GrÃ¶ÃŸe auftreten, erscheint ein entsprechender Hinweis.
 
-Je nach dem Status der Laufwerksauswahl sind die Aktionsknöpfe `Lesen`, `Schreiben` und `Kopieren` anwählbar oder in Geisterschrift dargestellt.
+Je nach dem Status der Laufwerksauswahl sind die AktionsknÃ¶pfe `Lesen`, `Schreiben` und `Kopieren` anwÃ¤hlbar oder in Geisterschrift dargestellt.
 
 
 
 
 ## 1.2 Anzeigebereich 
 
-Im Anzeigebereich rechts neben der Laufwerksauswahl werden in der Listenanzeige unter `Bearbeitet` die Namen der Datenträger aufgelistet. Je nach Art der Bearbeitung in in verschiedenen Farben:
+Im Anzeigebereich rechts neben der Laufwerksauswahl werden in der Listenanzeige unter `Bearbeitet` die Namen der DatentrÃ¤ger aufgelistet. Je nach Art der Bearbeitung in in verschiedenen Farben:
 
-schwarz:	gelesen,	überprüft  
-weiß:	geschrieben,	formatiert  
+schwarz:	gelesen,	Ã¼berprÃ¼ft  
+weiÃŸ:	geschrieben,	formatiert  
 blau (Farbe 3):	kopiert
 
-Rechts daneben befindet sich die Fehleranzeige, die nur Lesefehler in Farbe Schwarz darstellt (siehe hierzu \\\Anhang A). Bei allen anderen vorkommenden Fehler wie Schreib- oder Überprüfungsfehler, wird der aktuelle Bearbeitungsvorgang abgebrochen.
+Rechts daneben befindet sich die Fehleranzeige, die nur Lesefehler in Farbe Schwarz darstellt (siehe hierzu \\\Anhang A). Bei allen anderen vorkommenden Fehler wie Schreib- oder ÃœberprÃ¼fungsfehler, wird der aktuelle Bearbeitungsvorgang abgebrochen.
 
 
 
@@ -83,7 +84,7 @@ Rechts daneben befindet sich die Fehleranzeige, die nur Lesefehler in Farbe Schw
 
 In der Statusanzeige wird links oben der momentane Bearbeitungsmodus angezeigt. Falls gerade auf dem Benutzer gewartet wird, oder ein anderes Fenster aktiv ist, steht hier einfach `warte...`.
 
-Während der Bearbeitung eines Datenträgers füllt sich die darunter liegende Füllstandsanzeige auf und zeigt zusätzlich in Prozenten die bearbeiteten Spuren an. Rechts neben der Füllstandsanzeige liegt des `Stop!` Knopf, der zum Unterbrechen der aktuellen Funktion verwendet wird. Natürlich wird vorher vom Programm noch mal nachgefragt, ob nun auch wirklich der aktuelle Bearbeitungsvorgang unterbrochen werden soll.
+WÃ¤hrend der Bearbeitung eines DatentrÃ¤gers fÃ¼llt sich die darunter liegende FÃ¼llstandsanzeige auf und zeigt zusÃ¤tzlich in Prozenten die bearbeiteten Spuren an. Rechts neben der FÃ¼llstandsanzeige liegt des `Stop!` Knopf, der zum Unterbrechen der aktuellen Funktion verwendet wird. NatÃ¼rlich wird vorher vom Programm noch mal nachgefragt, ob nun auch wirklich der aktuelle Bearbeitungsvorgang unterbrochen werden soll.
 
 Zur Komplettierung der Statusanzeige wird rechts daneben die aktuelle Spur sowie die schon verstrichene Zeit angezeigt.
 
@@ -92,37 +93,37 @@ Zur Komplettierung der Statusanzeige wird rechts daneben die aktuelle Spur sowie
 
 ## 1.4 Buffer 
 
-Beim `Lesen` oder `Schreiben` können von oder in einen Buffer Daten ablegen. Die Art des Buffer kann durch den obersten Knopf, in dem sich beim Start des Programms der Text Speicher befinden sollte, ausgewählt werden. Es gibt davon drei verschiedene Arten, die nachfolgend Beschrieben werden.
+Beim `Lesen` oder `Schreiben` kÃ¶nnen von oder in einen Buffer Daten ablegen. Die Art des Buffer kann durch den obersten Knopf, in dem sich beim Start des Programms der Text Speicher befinden sollte, ausgewÃ¤hlt werden. Es gibt davon drei verschiedene Arten, die nachfolgend Beschrieben werden.
 
 
 ### 1.4.1 Speicher 
 
-Hier wird jeder frei verfügbare Speicher hergenommen, um die Daten unterzubringen. Über der Anzeige, des noch verfügbaren Speicherplatzes wird noch der aktuelle Speicher-Packer (Siehe \\\Kapitel 2 Optionen) angezeigt.
+Hier wird jeder frei verfÃ¼gbare Speicher hergenommen, um die Daten unterzubringen. Ãœber der Anzeige, des noch verfÃ¼gbaren Speicherplatzes wird noch der aktuelle Speicher-Packer (Siehe \\\Kapitel 2 Optionen) angezeigt.
 
 Durch einen Druck auf `freigeben` kann nach dem Einlesen von Daten in dem Speicher der Buffer freigegeben werden.
 
 
 ### 1.4.2 Laufwerk 
 
-Hier kann für die Daten ein Laufwerk angegeben werden. Momentan sollte hier das Laufwerk angezeigt werden, auf dem noch genügend Platz vorhanden ist. Falls dennoch der Buffer auf ein anderes Laufwerk verlegt werden soll, kann dies durch der Anwahl des rechts neben dem Laufwerknamen befindlichen "Pop-Up"-knopf unternommen werden. Hier erscheint dann ein Auswahlfenster mit einer Liste der angemeldeten Laufwerke, die durch einfaches Anklicken ausgewählt werden können. Mit `Abbruch`, wird nichts am aktuellen Laufwerksnamen verändert.
+Hier kann fÃ¼r die Daten ein Laufwerk angegeben werden. Momentan sollte hier das Laufwerk angezeigt werden, auf dem noch genÃ¼gend Platz vorhanden ist. Falls dennoch der Buffer auf ein anderes Laufwerk verlegt werden soll, kann dies durch der Anwahl des rechts neben dem Laufwerknamen befindlichen "Pop-Up"-knopf unternommen werden. Hier erscheint dann ein Auswahlfenster mit einer Liste der angemeldeten Laufwerke, die durch einfaches Anklicken ausgewÃ¤hlt werden kÃ¶nnen. Mit `Abbruch`, wird nichts am aktuellen Laufwerksnamen verÃ¤ndert.
 
-Darunter noch die Anzeige der freien Bytes auf dem angewählten Laufwerk, sowie Laufwerk-Packer, der in den Optionen (\\\Kapitel 2) eingestellt werden kann.
+Darunter noch die Anzeige der freien Bytes auf dem angewÃ¤hlten Laufwerk, sowie Laufwerk-Packer, der in den Optionen (\\\Kapitel 2) eingestellt werden kann.
 
-Falls Daten schon einmal eingelesen `Lesen` wurden, können die Daten durch einen Druck auf `freigeben` gelöscht werden.
+Falls Daten schon einmal eingelesen `Lesen` wurden, kÃ¶nnen die Daten durch einen Druck auf `freigeben` gelÃ¶scht werden.
 
-Beachten Sie bitte, daß in keinem Fall irgendwelche Daten auf dem angegebenen Laufwerk gelöscht werden.
+Beachten Sie bitte, daÃŸ in keinem Fall irgendwelche Daten auf dem angegebenen Laufwerk gelÃ¶scht werden.
 
 
 ### 1.4.3 Datei 
 
-Hier kann ein beliebiger Dateiname angegeben werden, in dem oder von dem die Daten gespeichert oder gelesen werden können. Ab *Kickstart 2.0*  kann hier die Auswahl der Datei durch den rechts daneben liegenden "PopUp"-knopf durch den *Dateienrequester "ASL"* erleichtert werden. Unter *Kickstart 1.3* oder 1.2 wird dieser Knopf erst gar nicht angezeigt. Hier muß der Dateiname per Hand eingegeben werden.
+Hier kann ein beliebiger Dateiname angegeben werden, in dem oder von dem die Daten gespeichert oder gelesen werden kÃ¶nnen. Ab *Kickstart 2.0*  kann hier die Auswahl der Datei durch den rechts daneben liegenden "PopUp"-knopf durch den *Dateienrequester "ASL"* erleichtert werden. Unter *Kickstart 1.3* oder 1.2 wird dieser Knopf erst gar nicht angezeigt. Hier muÃŸ der Dateiname per Hand eingegeben werden.
 
-Wie gewohnt wird darunter der Datei-Packer sowie die Anzahl der freien Bytes auf dem Datenträger, der die Datei enthält oder enthalten wird, angezeigt.
+Wie gewohnt wird darunter der Datei-Packer sowie die Anzahl der freien Bytes auf dem DatentrÃ¤ger, der die Datei enthÃ¤lt oder enthalten wird, angezeigt.
 
 
 ### 1.4.4 Bufferinfo 
 
-Während dem Lesen in einem Buffer verändert sich die Buffer-Anzeige in die Bufferinfo-Anzeige:
+WÃ¤hrend dem Lesen in einem Buffer verÃ¤ndert sich die Buffer-Anzeige in die Bufferinfo-Anzeige:
 
 Rechts neben "Out" wird die Anzahl der komprimierten bis jetzt ausgegebenen Bytes angezeigt, und neben "In" die Anzahl der unkomprimierten Bytes, die bis jetzt eingelesen wurden.
 
@@ -133,100 +134,100 @@ Darunter erscheint der aktuelle Packer, die Packrate sowie die Anzahl der freien
 
 ## 1.5 Spurbereich 
 
-Zwischen den Buffereinstellungen und den Aktionsknöpfe kann der Spurbereich eingestellt werden. Bei der Anwahl eines Quellaufwerkes werden hier automatisch die Start- und Endspur übertragen, die durch die zwei Eingabefelder neben "Von" und "bis" geändert werden können.
+Zwischen den Buffereinstellungen und den AktionsknÃ¶pfe kann der Spurbereich eingestellt werden. Bei der Anwahl eines Quellaufwerkes werden hier automatisch die Start- und Endspur Ã¼bertragen, die durch die zwei Eingabefelder neben "Von" und "bis" geÃ¤ndert werden kÃ¶nnen.
 
-Beachten Sie bitte, daß diese Einstellungen nur für das Quellaufwerk gelten. Bei `Schreiben`, wo ja der Buffer verwendet wird, wird die Start- und Endspur ignoriert.
+Beachten Sie bitte, daÃŸ diese Einstellungen nur fÃ¼r das Quellaufwerk gelten. Bei `Schreiben`, wo ja der Buffer verwendet wird, wird die Start- und Endspur ignoriert.
 
 
 
 
 # 2 Optionen 
 
-Mit einem Klick auf `Optionen...` erscheint ein Fenster, in dem einige Parameter eingestellt werden können.
+Mit einem Klick auf `Optionen...` erscheint ein Fenster, in dem einige Parameter eingestellt werden kÃ¶nnen.
 
 
 
 ### Datum anpassen 
 
--  Ist hier ein Haken gesetzt, wird bei einem Schreibvorgang das Datum der Diskette aktualisiert. Dieser Punkt ist voreingestellt, da durch ein Fehler in der Kickstart 1.3 der Computer bei der Erkennung von zwei gleichen Disketten abstürzt. 
+-  Ist hier ein Haken gesetzt, wird bei einem Schreibvorgang das Datum der Diskette aktualisiert. Dieser Punkt ist voreingestellt, da durch ein Fehler in der Kickstart 1.3 der Computer bei der Erkennung von zwei gleichen Disketten abstÃ¼rzt. 
 
-### Prüflesen 
+### PrÃ¼flesen 
 
--  Durch setzen dieser Option werden die Daten nach dem Schreiben nochmals zur Überprüfung gelesen gelesen. Sollte aus Sicherheitsgründen immer angewählt sein. 
+-  Durch setzen dieser Option werden die Daten nach dem Schreiben nochmals zur ÃœberprÃ¼fung gelesen gelesen. Sollte aus SicherheitsgrÃ¼nden immer angewÃ¤hlt sein. 
 
 ### Leseversuche 
 
--  Falls Fehler beim Einlesen von Daten auftreten, wird solange die defekte Spur nochmals gelesen und überprüft, bis die hier angegebenen Leseversuche durchgeführt worden sind. Voreingestellt sind 5. 
+-  Falls Fehler beim Einlesen von Daten auftreten, wird solange die defekte Spur nochmals gelesen und Ã¼berprÃ¼ft, bis die hier angegebenen Leseversuche durchgefÃ¼hrt worden sind. Voreingestellt sind 5. 
 
 ### Packer 
 
-Wie schon in den vorherigen Kapiteln beschrieben, können hier die Packer mit Hilfe von "Pop-Up"-knöpfen für die verschiedenen Buffer-Typen eingestellt werden.
+Wie schon in den vorherigen Kapiteln beschrieben, kÃ¶nnen hier die Packer mit Hilfe von "Pop-Up"-knÃ¶pfen fÃ¼r die verschiedenen Buffer-Typen eingestellt werden.
 
 
-Nachdem die Parameter verändert wurden, können sie mit einem Druck auf `Sichern` fest gespeichert werden, oder mit `Verwenden` nur bis zur Beendigung von COP! gesetzt werden.
+Nachdem die Parameter verÃ¤ndert wurden, kÃ¶nnen sie mit einem Druck auf `Sichern` fest gespeichert werden, oder mit `Verwenden` nur bis zur Beendigung von COP! gesetzt werden.
 
-Mit `Abbruch` werden alle Veränderungen an den Parametern verworfen.
+Mit `Abbruch` werden alle VerÃ¤nderungen an den Parametern verworfen.
 
 
 
 # 3 Inhalt 
 
 
-Manchmal ist es vor dem Überkopieren oder Formatieren eines Datenträgers wichtig zu wissen, welche Dateien sich darauf befinden.
+Manchmal ist es vor dem Ãœberkopieren oder Formatieren eines DatentrÃ¤gers wichtig zu wissen, welche Dateien sich darauf befinden.
 
-Nach Druck `Inhalt` erscheint im selben Fenster eine Laufwerksauswahl sowie drei Verzeichnis-Auswahlfelder. Von links nach rechts können nun durch Drücken auf die jeweiligen Laufwerke oder Verzeichnisse drei Ebenen der Verzeichnisstruktur angezeigt werden.
-
-
+Nach Druck `Inhalt` erscheint im selben Fenster eine Laufwerksauswahl sowie drei Verzeichnis-Auswahlfelder. Von links nach rechts kÃ¶nnen nun durch DrÃ¼cken auf die jeweiligen Laufwerke oder Verzeichnisse drei Ebenen der Verzeichnisstruktur angezeigt werden.
 
 
-# 4 Aktionsknöpfe 
+
+
+# 4 AktionsknÃ¶pfe 
 
 
 ## 4.1 Lesen 
 
-Falls ein Quellaufwerk angewählt wurde, kann hier in einem der Buffer die Daten des angewählten Laufwerkes eingelesen werden. Wenn der Buffer schon vorhanden ist, und noch nicht wieder zurückgeschrieben wurde, oder beim Datei-Buffer die Datei schon vorhanden ist, erscheint hier vorher noch eine Sicherheitsabfrage.
+Falls ein Quellaufwerk angewÃ¤hlt wurde, kann hier in einem der Buffer die Daten des angewÃ¤hlten Laufwerkes eingelesen werden. Wenn der Buffer schon vorhanden ist, und noch nicht wieder zurÃ¼ckgeschrieben wurde, oder beim Datei-Buffer die Datei schon vorhanden ist, erscheint hier vorher noch eine Sicherheitsabfrage.
 
-Um `Lesen` abzubrechen, ist ein Druck auf `Stop!` nötig.
+Um `Lesen` abzubrechen, ist ein Druck auf `Stop!` nÃ¶tig.
 
 
 ## 4.2 Schreiben 
 
-Hier werden die Daten auf die angewählten Ziellaufwerk zurückkopiert. Die Spurangaben werden in diesem Fall vom Buffer übernommen. Falls die physikalische Größe der Daten des Buffers nicht mit den Ziellaufwerk(en) übereinstimmt, wird ein entsprechender Hinweis erscheinen und der eigentliche Schreibvorgang nicht gestartet.
+Hier werden die Daten auf die angewÃ¤hlten Ziellaufwerk zurÃ¼ckkopiert. Die Spurangaben werden in diesem Fall vom Buffer Ã¼bernommen. Falls die physikalische GrÃ¶ÃŸe der Daten des Buffers nicht mit den Ziellaufwerk(en) Ã¼bereinstimmt, wird ein entsprechender Hinweis erscheinen und der eigentliche Schreibvorgang nicht gestartet.
 
 Abgebrochen kann die Schreibfunktion durch `Stop!` werden.
 
 
 ## 4.3 Kopieren 
 
-Wenn sowohl ein Quellaufwerk als auch ein oder mehrere Ziellaufwerke vorhanden sind, können die Daten mit dieser Funktion direkt kopiert werden.
+Wenn sowohl ein Quellaufwerk als auch ein oder mehrere Ziellaufwerke vorhanden sind, kÃ¶nnen die Daten mit dieser Funktion direkt kopiert werden.
 
-Das Abbrechen ist mit einem Klick auf `Stop!` möglich.
+Das Abbrechen ist mit einem Klick auf `Stop!` mÃ¶glich.
 
 
-## 4.4 Überprüfen 
+## 4.4 ÃœberprÃ¼fen 
 
-Hiermit wird das aktuelle Quellaufwerk überprüft. Ein Abbrechen ist auch hier durch einen Klick auf `Stop!` möglich.
+Hiermit wird das aktuelle Quellaufwerk Ã¼berprÃ¼ft. Ein Abbrechen ist auch hier durch einen Klick auf `Stop!` mÃ¶glich.
 
 
 ## 4.5 Formatieren 
 
-Hier wird nicht wie üblich bei den anderen Aktionsknöpfen die Bearbeitung sofort gestartet, sondern es erscheint vielmehr zuerst ein Fenster, in dem noch einige Einstellungen gemacht werden können:
+Hier wird nicht wie Ã¼blich bei den anderen AktionsknÃ¶pfen die Bearbeitung sofort gestartet, sondern es erscheint vielmehr zuerst ein Fenster, in dem noch einige Einstellungen gemacht werden kÃ¶nnen:
 
-### Name des Datenträgers 
+### Name des DatentrÃ¤gers 
 
--  Hier steht der Name den der Datenträger nach der Formatierung bekommen soll. Voreingestellt ist "Leer". 
+-  Hier steht der Name den der DatentrÃ¤ger nach der Formatierung bekommen soll. Voreingestellt ist "Leer". 
 
 ### File System 
 
--  Momentan kann nur aus zwei File-Systeme ausgewählt werden. Fast File System und Old File System. Voreingestellt ist hier das Old File System. 
+-  Momentan kann nur aus zwei File-Systeme ausgewÃ¤hlt werden. Fast File System und Old File System. Voreingestellt ist hier das Old File System. 
 
 ### Internationaler Modus 
 
-Hier können Sie den internationalen Modus auswählen. Dieser Modus ist nur dann sinnvoll, wenn Umlaute als Verzeichnis- oder Dateinamen verwendet werden.
+Hier kÃ¶nnen Sie den internationalen Modus auswÃ¤hlen. Dieser Modus ist nur dann sinnvoll, wenn Umlaute als Verzeichnis- oder Dateinamen verwendet werden.
 
 ### schnelle Formatierung 
 
-Wird dieser Punkt hier abgehakt, wird der Datenträger *soft-formatiert*. Das Programm geht davon aus, daß alle Datenblöcke schon formatiert sind, und der Datenträger nur gelöscht werden soll. In diesem Fall wird nur der *Bootblock* und der *Rootblock* beschrieben.
+Wird dieser Punkt hier abgehakt, wird der DatentrÃ¤ger *soft-formatiert*. Das Programm geht davon aus, daÃŸ alle DatenblÃ¶cke schon formatiert sind, und der DatentrÃ¤ger nur gelÃ¶scht werden soll. In diesem Fall wird nur der *Bootblock* und der *Rootblock* beschrieben.
 
 
 ### Formatieren 
@@ -241,9 +242,9 @@ Hiermit kann die Formatierung abgebrochen werden.
 
 
 
-# Anhang A Tastaturkürzel 
+# Anhang A TastaturkÃ¼rzel 
 
-Folgende *Tastaturkürzel* können bei COP! verwendet werden:
+Folgende *TastaturkÃ¼rzel* kÃ¶nnen bei COP! verwendet werden:
 
 Basisfenster:
 
@@ -258,7 +259,7 @@ Basisfenster:
 `l`	Lesen  
 `s`	Schreiben  
 `k`	Kopieren  
-`p`	Überprüfen  
+`p`	ÃœberprÃ¼fen  
 `f`	Formatieren
 
 Formatieren-Fenster:
