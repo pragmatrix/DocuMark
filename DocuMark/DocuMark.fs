@@ -86,7 +86,9 @@ module DocuParser =
 
 module Docu =
 
-    let encoding = System.Text.Encoding.GetEncoding("ISO-8859-1")
+    // original encoding:
+    // let encoding = System.Text.Encoding.GetEncoding("ISO-8859-1")
+    let encoding = System.Text.Encoding.UTF8
 
     let readFile (filename:string) = 
         use file = new StreamReader(filename, encoding, false)
