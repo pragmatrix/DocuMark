@@ -1,4 +1,14 @@
-﻿Inhaltsverzeichnis COP!
+﻿Referenzdokumation zur Amiga Software COP!, die 1992 von Markt & Technik unter dem Namen "Simplex Tools" veröffentlicht wurde.
+
+COP! ist ein Anwenderprogramm für den Amiga, das Disketten kopiert und komprimierte Diskettenabbilder erzeugt.
+
+Die Kompatibilität mit aktuellen Amiga Systemen kann nicht garantiert werden. Bitte sichern Sie alle wichtigen Daten vor der Verwendung. Jegliche Haftung ist ausgeschlossen.
+
+Diese Referenz wurde von Guido Ruhl verfasst und mit freundlicher Erlaubnis von Pearson ​Deutschland GmbH für die Freeware Veröffentlichung von RAP!TOP!COP! zur Verfügung gestellt.
+
+(c) 1992 Pearson ​Deutschland GmbH
+
+Inhaltsverzeichnis
 
 Einleitung
 
@@ -28,11 +38,7 @@ Einleitung
 4.5	Formatieren
 
 Anhang A	Tastaturkürzel  
-Anhang B	Fehlermeldungen beim Datenzugriff \\\ \*\*\*\*((((siehe TOP!)))\*\*\*\*
-
-Diese Referenz wurde von Guid Ruhl verfasst und mit mit freundlicher Erlaubnis von Pearson ​Deutschland GmbH für die Freeware Version von RAP!TOP!COP! zur Verfügung gestellt.
-
-(c) Pearson ​Deutschland GmbH
+Anhang B	Fehlermeldungen beim Datenzugriff
 
 # Einleitung 
 
@@ -278,4 +284,45 @@ Verschiedene Hinweisfenster:
 
 `v`	OK! (linker Knopf)  
 `b`	Abbruch (rechter Knopf)
+
+## Anhang B Fehlermeldungen beim Datenzugriff 
+
+
+Folgende Fehler können beim Lesen oder Schreiben von Daten vorkommen:
+
+Kein Sektor-Header  
+Falsche Sektor-Preamble  
+Falsche Sektor-ID  
+Falsche Header-Prüfsumme  
+Falsche Sektor-Prüfsumme  
+Zu wenige Sektoren  
+Falscher Sektor-Header
+
+-  Alle diese Fehlermeldungen deuten darauf hin, daß ein Sektor beziehungsweise eine Spur defekt ist. 
+
+Schreibgeschützt
+
+-  Der Datenträger ist schreibgeschützt. 
+
+Diskette gewechselt
+
+-  Die Diskette wurde aus dem Laufwerk entfernt oder es war keine eingelegt. 
+
+Seek Fehler
+
+-  Die Spur 0 wurde nicht gefunden. Dieser Fehler kann auf einen Hardwaredefekt Ihres Laufwerks hindeuten. 
+
+Kein Speicher
+
+-  Es ist zu wenig Speicher vorhanden. 
+
+Laufwerk wird benutzt
+
+-  Das Laufwerk wird gerade von jemanden benutzt. Bitte starten Sie den Vorgang nochmals. 
+
+
+Falsche Unit  
+Falscher Laufwerkstyp
+
+-  Interne Fehler, die nicht auftreten sollten. 
 

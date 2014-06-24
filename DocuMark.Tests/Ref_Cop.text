@@ -1,4 +1,14 @@
-﻿Inhaltsverzeichnis COP!
+﻿Referenzdokumation zur Amiga Software COP!, die 1992 von Markt & Technik unter dem Namen "Simplex Tools" veröffentlicht wurde.
+
+COP! ist ein Anwenderprogramm für den Amiga, das Disketten kopiert und komprimierte Diskettenabbilder erzeugt.
+
+Die Kompatibilität mit aktuellen Amiga Systemen kann nicht garantiert werden. Bitte sichern Sie alle wichtigen Daten vor der Verwendung. Jegliche Haftung ist ausgeschlossen.
+
+Diese Referenz wurde von Guido Ruhl verfasst und mit freundlicher Erlaubnis von Pearson ​Deutschland GmbH für die Freeware Veröffentlichung von RAP!TOP!COP! zur Verfügung gestellt.
+
+(c) 1992 Pearson ​Deutschland GmbH
+
+Inhaltsverzeichnis
 
 Einleitung
 
@@ -28,11 +38,7 @@ Einleitung
 4.5	Formatieren
 
 Anhang A	Tastaturkürzel
-Anhang B	Fehlermeldungen beim Datenzugriff \\\ ****((((siehe TOP!)))****
-
-Diese Referenz wurde von Guid Ruhl verfasst und mit mit freundlicher Erlaubnis von Pearson ​Deutschland GmbH für die Freeware Version von RAP!TOP!COP! zur Verfügung gestellt.
-
-(c) Pearson ​Deutschland GmbH
+Anhang B	Fehlermeldungen beim Datenzugriff
 
 /UK Einleitung UK/
 
@@ -278,4 +284,45 @@ Verschiedene Hinweisfenster:
 
 /ZB v ZB/	OK! (linker Knopf)
 /ZB b ZB/	Abbruch (rechter Knopf)
+
+/U1 Anhang B Fehlermeldungen beim Datenzugriff U1/
+
+
+Folgende Fehler können beim Lesen oder Schreiben von Daten vorkommen:
+
+Kein Sektor-Header
+Falsche Sektor-Preamble
+Falsche Sektor-ID
+Falsche Header-Prüfsumme
+Falsche Sektor-Prüfsumme
+Zu wenige Sektoren
+Falscher Sektor-Header
+
+/E2 Alle diese Fehlermeldungen deuten darauf hin, daß ein Sektor beziehungsweise eine Spur defekt ist. E2/
+
+Schreibgeschützt
+
+/E2 Der Datenträger ist schreibgeschützt. E2/
+
+Diskette gewechselt
+
+/E2 Die Diskette wurde aus dem Laufwerk entfernt oder es war keine eingelegt. E2/
+
+Seek Fehler
+
+/E2 Die Spur 0 wurde nicht gefunden. Dieser Fehler kann auf einen Hardwaredefekt Ihres Laufwerks hindeuten. E2/
+
+Kein Speicher
+
+/E2 Es ist zu wenig Speicher vorhanden. E2/
+
+Laufwerk wird benutzt
+
+/E2 Das Laufwerk wird gerade von jemanden benutzt. Bitte starten Sie den Vorgang nochmals. E2/
+
+
+Falsche Unit
+Falscher Laufwerkstyp
+
+/E2 Interne Fehler, die nicht auftreten sollten. E2/
 
