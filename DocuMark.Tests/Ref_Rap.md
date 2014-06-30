@@ -1,16 +1,6 @@
-﻿Referenzdokumation zur Amiga Software RAP!, die 1992 von Markt & Technik unter dem Namen "Simplex Tools" veröffentlicht wurde.
+﻿# Inhaltsverzeichnis der Amiga Software RAP! 
 
-RAP! ist ein Anwenderprogramm und ein Treiber für den Amiga, das Dateisysteme während dem Zugriff komprimiert.
-
-RAP! unterstützt den XPK Kompressionsstandard.
-
-Die Kompatibilität mit aktuellen Amiga Systemen kann nicht garantiert werden. Bitte sichern Sie alle wichtigen Daten vor der Verwendung. Jegliche Haftung ist ausgeschlossen.
-
-Diese Referenz wurde von Guido Ruhl verfasst und mit freundlicher Erlaubnis von Pearson ​Deutschland GmbH für die Freeware Veröffentlichung von RAP!TOP!COP! zur Verfügung gestellt.
-
-(c) 1992 Pearson ​Deutschland GmbH
-
-# Inhaltsverzeichnis 
+Copyright & Anmerkungen zur Freeware Version
 
 Einführung
 
@@ -47,6 +37,19 @@ Anhang E	XPK-Standard
 Anhang F	Platzhalter  
 Anhang G	Die mitgelieferten Packer "scn1" und "runl".  
 Anhang H	Tastaturkürzel im Konfigurationsprogramm.
+
+# Copyright & Anmerkungen zur Freeware Version 
+
+RAP! ist ein Anwenderprogramm und ein Treiber für den Amiga, das Dateisysteme während dem Zugriff komprimiert.
+
+RAP! wurde 1992 von Markt & Technik unter den Namen "Simplex Tools" kommerziell veröffentlicht und 2014 als Freeware freigegeben.
+
+Die Kompatibilität mit aktuellen Amiga Systemen kann nicht garantiert werden. Bitte sichern Sie alle wichtigen Daten vor der Verwendung. Jegliche Haftung ist ausgeschlossen.
+
+Diese Referenz wurde von Guido Ruhl verfasst und mit freundlicher Erlaubnis von Pearson ​Deutschland GmbH zur Verfügung gestellt.
+
+Referenzdokumentation (c) 1992 Pearson ​Deutschland GmbH  
+Sofware (c) 1992 Armin Sander
 
 # Einführung 
 
