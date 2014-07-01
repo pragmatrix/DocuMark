@@ -1,14 +1,6 @@
-﻿Referenzdokumation zur Amiga Software TOP!, die 1992 von Markt & Technik unter dem Namen "Simplex Tools" veröffentlicht wurde.
+﻿/UK Inhaltsverzeichnis Anleitung Amiga Software TOP! UK/
 
-TOP! ist ein Anwenderprogramm für den Amiga, das Festplatten defragmentiert.
-
-Die Kompatibilität mit aktuellen Amiga Systemen kann nicht garantiert werden. Bitte sichern Sie alle wichtigen Daten vor der Verwendung. Jegliche Haftung ist ausgeschlossen.
-
-Diese Referenz wurde von Guido Ruhl verfasst und mit freundlicher Erlaubnis von Pearson ​Deutschland GmbH für die Freeware Veröffentlichung von RAP!TOP!COP! zur Verfügung gestellt.
-
-(c) 1992 Pearson ​Deutschland GmbH
-
-/UK Inhaltsverzeichnis UK/
+Copyright & Anmerkungen zur Freeware Version
 
 Einführung
 
@@ -31,6 +23,19 @@ Einführung
 Anhang A	Statusanzeige
 Anhang B	Tastaturkürzel
 Anhang C	Fehlermeldungen beim Datenzugriff
+
+/UK Copyright & Anmerkungen zur Freeware Version UK/
+
+TOP! ist ein Anwenderprogramm für den Amiga, das Festplatten defragmentiert.
+
+TOP! wurde 1992 von Markt & Technik unter dem Namen "Simplex Tools" kommerziell veröffentlicht und 2014 als Freeware freigegeben.
+
+Diese Referenz wurde von Guido Ruhl verfasst und mit freundlicher Erlaubnis von Pearson ​Deutschland GmbH zur Verfügung gestellt.
+
+Software © 1992 Armin Sander
+Dokumentation © 1992 Pearson ​Deutschland GmbH
+
+Die Kompatibilität mit aktuellen Amiga Systemen kann nicht garantiert werden. Bitte sichern Sie alle wichtigen Daten vor der Verwendung. Jegliche Haftung ist ausgeschlossen.
 
 /UK Einführung UK/
 
